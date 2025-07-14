@@ -1,0 +1,19 @@
+@use "./index.module" as *;
+.sellerlogin {
+  width: 400px;
+  margin-top: 40px;
+  &Img {
+    width: 400px;
+    height: 200px;
+  }
+  &Title {
+    color: $primary-color;
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+  }
+  &Content {
+    color: #666;
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+}

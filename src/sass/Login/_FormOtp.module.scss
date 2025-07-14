@@ -1,0 +1,13 @@
+@use "../common/index.module" as *;
+.form {
+  @include formbg;
+  height: 410px;
+  &Link {
+    text-decoration: none;
+    font-size: 1.3rem;
+    @include dflex;
+    justify-content: end;
+    margin: -10px 0 10px;
+    color: $form-linkcolor;
+  }
+}

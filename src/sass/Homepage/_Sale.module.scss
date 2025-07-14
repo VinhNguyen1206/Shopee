@@ -1,0 +1,61 @@
+@use "../common/index.module" as *;
+.sale {
+  @include bg;
+  margin-top: 35px;
+  padding: 10px;
+  &Title {
+    @include dflex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    &Left {
+      @include dflex;
+      &Icon {
+        padding: 6px 12px 0 10px;
+      }
+    }
+  }
+  &List {
+    display: flex;
+    @include scrollbar;
+    &Item {
+      width: 200px;
+      height: 250px;
+      position: relative;
+      padding: 15px;
+      margin-bottom: 10px;
+      margin-right: 5px;
+      &Link {
+        text-decoration: none;
+        color: $primary-color;
+      }
+      &Img {
+        width: 170px;
+        height: 170px;
+      }
+      &Sale {
+        border: 0.1px solid black;
+        @include dflex;
+        width: 50px;
+        background-color: yellow;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      &Price {
+        @include dflex;
+        color: $primary-color;
+        font-size: 2rem;
+        padding: 10px 0;
+      }
+      &Sold {
+        text-align: center;
+        font-size: 1.4rem;
+        border: 0.1px solid black;
+        color: $bg-color;
+        border-radius: 50px;
+        overflow: hidden;
+        background-image: linear-gradient(to right, $primary-color, #35fa03);
+      }
+    }
+  }
+}

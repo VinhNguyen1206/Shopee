@@ -1,0 +1,35 @@
+@use "./index.module" as *;
+.navbar {
+  box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.1);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 200px;
+  &Nav {
+    width: 1200px;
+    @include dflex;
+    justify-content: space-between;
+    margin: 0 160px;
+    &Left {
+      @include dflex;
+      justify-content: space-between;
+      width: 330px;
+      &Img {
+        height: 40px;
+      }
+      &Content {
+        font-size: 2.4rem;
+        padding-top: 10px;
+        width: 250px;
+        padding-left: 10px;
+      }
+    }
+    &Right {
+      &Link {
+        text-decoration: none;
+        color: $primary-color;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

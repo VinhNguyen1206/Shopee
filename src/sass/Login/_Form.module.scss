@@ -1,0 +1,81 @@
+@use "../common/index.module" as *;
+.form {
+  @include formbg;
+  height: 480px;
+  &Header {
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    &Title {
+      font-size: 1.8rem;
+      width: 100px;
+    }
+    &Login {
+      margin-left: 20px;
+      @include dflex;
+      &Content {
+        border: 2px solid $form-bgcolor;
+        background-color: #fefaee;
+        color: $form-bgcolor;
+        padding: 10px;
+        position: relative;
+        margin-right: 10px;
+        &::after {
+          content: "";
+          position: absolute;
+          border: 10px solid;
+          border-color: transparent transparent transparent $form-bgcolor;
+          right: -20px;
+          top: 35%;
+        }
+      }
+      &Qr {
+        height: 60px;
+      }
+    }
+  }
+  &Main {
+    padding: 0 30px 30px;
+    &Input {
+      &Account {
+        width: 100%;
+        margin-bottom: 30px;
+        height: 40px;
+        padding: 12px;
+      }
+      &Btn {
+        width: 100%;
+        height: 40px;
+        background-color: $primary-color;
+        color: $bg-color;
+        border: none;
+      }
+    }
+    &Cover {
+      display: flex;
+      width: 100%;
+      position: relative;
+      &Input {
+        @extend .formMainInputAccount;
+      }
+      &ClickOn,
+      &ClickOff {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        border: none;
+        background-color: #fff;
+      }
+    }
+    &Other {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      &Link {
+        text-decoration: none;
+        color: $form-linkcolor;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

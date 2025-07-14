@@ -1,0 +1,6 @@
+@use "../common/index.module" as *;
+.container {
+  padding-top: 30px;
+  background-color: rgba($color: #fef9f7, $alpha: 0.8);
+  margin: 0 auto;
+}

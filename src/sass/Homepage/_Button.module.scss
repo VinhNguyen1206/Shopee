@@ -1,0 +1,23 @@
+@use "../common/index.module" as *;
+.btnGt {
+  position: absolute;
+  right: -10px;
+  top: 54%;
+  border: 0.1px solid rgba($color: $text-color, $alpha: 0.1);
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: $bg-color;
+  color: rgba($color: $text-color, $alpha: 0.5);
+  transition: transform 0.2s;
+  z-index: 1;
+  @include dflex;
+  &:hover {
+    cursor: pointer;
+    transform: scale(2.5, 2.5);
+  }
+}
+.btnLt {
+  @extend .btnGt;
+  left: -10px;
+}

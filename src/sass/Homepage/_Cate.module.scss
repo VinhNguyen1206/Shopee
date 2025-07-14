@@ -1,0 +1,46 @@
+@use "../common/index.module" as *;
+.cate {
+  @include bg;
+  &Title {
+    @include title;
+    &Name {
+      color: rgba($color: $text-color, $alpha: 0.54);
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+  &List {
+    @include scrollbar;
+    &Top,
+    &Bot {
+      display: flex;
+    }
+    &Item {
+      width: 125px;
+      height: 135px;
+      border: 1px solid rgba($color: $text-color, $alpha: 0.05);
+      flex-shrink: 0;
+      flex-basis: 10%;
+      &:hover {
+        @include transition;
+        cursor: pointer;
+      }
+      &Link {
+        text-decoration: none;
+        color: $text-color;
+      }
+      &Img {
+        height: 80px;
+        width: 80px;
+        margin: 5px auto 0;
+        display: flex;
+      }
+      &Name {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        padding: 3px 5px;
+      }
+    }
+  }
+}

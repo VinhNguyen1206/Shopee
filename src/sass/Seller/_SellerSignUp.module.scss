@@ -1,0 +1,55 @@
+@use "../common/index.module" as *;
+.container {
+  background-color: rgb(253, 250, 247);
+}
+.seller {
+  background-image: url("/src/img/Seller/Sellerbg.png");
+  height: 600px;
+  max-width: 58vw;
+  margin: 0 auto;
+  @include dlfex;
+  justify-content: space-around;
+  &Left {
+    margin: 30px 100px 0 0;
+    color: $primary-color;
+    height: 400px;
+    width: 400px;
+    &Title {
+      font-size: 2.4rem;
+    }
+    &Name {
+      font-size: 3.5rem;
+      padding: 5px 0 10px;
+    }
+    &Item1 {
+      display: flex;
+      margin-top: 30px;
+      align-items: center;
+      &Img1 {
+        background-image: url("https://deo.shopeemobile.com/shopee/shopee-buyeruserfetoc-live-sg/assets/deac6dcbd9a7ccb0.png");
+        height: 30px;
+        width: 55px;
+        background-position: 48.679245283018865% 1.6366612111292962%;
+        background-size: 3780.5555555555557% 948.6111111111111%;
+        margin-right: 20px;
+      }
+    }
+    &Item2 {
+      @extend .sellerLeftItem1;
+      &Img2 {
+        width: 40px;
+        @extend .sellerLeftItem1Img1;
+        background-position: 36.22641509433962% 1.6366612111292962%;
+        background-size: 3780.5555555555557% 948.6111111111111%;
+      }
+    }
+    &Item3 {
+      @extend .sellerLeftItem1;
+      &Img3 {
+        @extend .sellerLeftItem1Img1;
+        background-position: 16.150943396226417% 1.594896331738437%;
+        background-size: 3780.5555555555557% 1219.642857142857%;
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@use "../common//index.module" as *;
+.nav2s {
+  color: $bg-color;
+}
+//*******************************************************
+.navbar {
+  background-image: linear-gradient($primary-color, #ff7337);
+  height: 120px;
+  padding: 0 300px 0 300px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  &Nav {
+    padding: 5px 0;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    &Left {
+      display: flex;
+      margin-left: 20px;
+      &Link {
+        display: flex;
+        &Click {
+          padding: 5px 5px 0;
+        }
+        &Item {
+          padding: 0 10px;
+          margin-top: 10px;
+          color: $bg-color;
+          font-size: 1.4rem;
+          @include dflex;
+          border-right: 1px solid hsla(0, 0%, 100%, 0.22);
+          height: 15px;
+          &To {
+            text-decoration: none;
+            color: $bg-color;
+          }
+          &:hover:not(:last-child) {
+            @include hover();
+          }
+        }
+      }
+      &Icon {
+        padding: 5px;
+        @include dflex;
+        &Num1 {
+          color: $bg-color;
+          padding: 5px;
+          &:hover {
+            @include hover();
+          }
+        }
+        &Num2 {
+          @extend .navbarNavLeftIconNum1;
+        }
+      }
+    }
+    &Right {
+      display: flex;
+      padding-top: 5px;
+      font-size: 1.3rem;
+      &Support {
+        display: flex;
+        &Box {
+          width: 250px;
+          height: 200px;
+          background-color: $bg-color;
+          position: absolute;
+          @include dflex;
+          flex-direction: column;
+          justify-content: end;
+          z-index: 3;
+          border-radius: 2px;
+          visibility: hidden;
+          transition: height 0.3s, width 0.3s;
+          right: 30px;
+          top: 28px;
+          &::after {
+            content: "";
+            @include afterHover;
+            right: 5%;
+            top: -18px;
+          }
+          &Img {
+            width: 100px;
+          }
+          &Content {
+            margin: 10px 0 100px;
+          }
+          &Cover {
+            width: 400px;
+            &Btn1,
+            &Btn2 {
+              width: 200px;
+              height: 40px;
+              outline: none;
+              border: none;
+              &:hover {
+                background-color: rgb(219, 219, 219);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &Lang {
+          background-color: $bg-color;
+          z-index: 3;
+          height: 60px;
+          width: 150px;
+          border-radius: 3px;
+          position: absolute;
+          top: 28px;
+          right: 30px;
+          transition: height 0.3s, width 0.3s;
+          visibility: hidden;
+          &::after {
+            content: "";
+            @include afterHover;
+            top: -18px;
+            right: 20px;
+          }
+          &Choose {
+            padding: 10px;
+            font-size: 1.4rem;
+            width: fit-content;
+            &:hover {
+              cursor: pointer;
+              color: $primary-color;
+            }
+          }
+        }
+        &Item {
+          position: relative;
+          height: 30px;
+          &:hover {
+            cursor: pointer;
+          }
+          &:hover:first-child .navbarNavRightSupportBox {
+            visibility: visible;
+            width: 400px;
+            height: 350px;
+          }
+          &:hover:last-child .navbarNavRightSupportLang {
+            visibility: visible;
+            width: 200px;
+            height: 70px;
+          }
+        }
+        &Select {
+          text-decoration: none;
+          color: $bg-color;
+          font-size: 1.4rem;
+          margin-right: 15px;
+        }
+      }
+      &Sign {
+        @include dflex;
+        height: 17px;
+        &Up {
+          border-right: 1px solid hsla(0, 0%, 100%, 0.22);
+          padding: 0 15px;
+        }
+        &Up,
+        &In {
+          font-size: 1.4rem;
+          @extend .navbarNavRightSupportSelect;
+          &:hover {
+            @include hover();
+          }
+        }
+        &In {
+        }
+      }
+    }
+  }
+  &Main {
+    display: flex;
+    padding: 16px 0 10px;
+    &Icon {
+      padding: 0 50px 0 30px;
+      color: $bg-color;
+    }
+    &Search {
+      width: 860px;
+      margin-right: 30px;
+      &Item {
+        position: relative;
+        &Input {
+          padding-left: 5px;
+          height: 40px;
+          width: 860px;
+        }
+        &Btn {
+          color: $bg-color;
+          background-color: $primary-color;
+          border: none;
+          height: 32px;
+          width: 60px;
+          position: absolute;
+          right: 6px;
+          top: 4px;
+          border-radius: 2px;
+          &:hover {
+            @include hover;
+          }
+        }
+      }
+      &Suggest {
+        margin-top: 5px;
+        &Things {
+          color: $bg-color;
+          text-decoration: none;
+          margin-right: 25px;
+          font-size: 1.2rem;
+          &:hover {
+            @include hover();
+          }
+        }
+      }
+    }
+    &Cart {
+      position: relative;
+      padding: 50px;
+      &Logo {
+        position: absolute;
+        height: 80px;
+        width: 50px;
+        color: $bg-color;
+        right: 0;
+        top: 15px;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+.fa-solid.fa-cart-shopping {
+  height: 80px;
+  width: 50px;
+}

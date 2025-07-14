@@ -1,0 +1,347 @@
+import { useEffect, useState, type SetStateAction } from "react";
+import NavBar from "../../components/HomePageComponent/NavBar/NavBar";
+import styles from "../../sass/Product/_Product.module.scss";
+import { icons } from "./ProductConstants";
+import type { Products } from "../../types/types";
+import "../../products.json";
+import ReportForm from "../../components/Product/ReportForm";
+import SecurityForm from "../../components/Product/SecurityForm";
+import { useParams } from "react-router-dom";
+import { mySlug } from "../../utils/Slug";
+import Clock from "../../components/HomePageComponent/Clock/Clock";
+const Product = () => {
+  const [visible, setVisible] = useState<boolean>(false);
+  const [checked, setChecked] = useState<number | null>(null);
+  const [variants, setVariants] = useState<
+    { variant_option_id: number; variant_id: number }[]
+  >([]);
+  const [product, setProduct] = useState<Products | null>(null);
+  const [count, setCount] = useState<number>(1);
+  const { slug } = useParams();
+  const handleVisible = () => {
+    console.log("Toggle checked");
+    setVisible(!visible);
+  };
+  const handleChecked = (variant_option_id: number, variant_id: number) => {
+    const values = {
+      variant_option_id: variant_option_id,
+      variant_id: variant_id,
+    };
+    setVariants((prev) => [...prev, values]);
+    console.log(variants);
+  };
+  useEffect(() => {
+    fetch("/src/products.json")
+      .then((res) => res.json())
+      .then((data: { products: Products[] }) => {
+        console.log(slug);
+        const foundData = data.products.find(
+          (product) => mySlug(product.name) === slug
+        );
+        setProduct(foundData || null);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, [slug]);
+
+  if (!product) {
+    return <div>Loading ...</div>;
+  }
+
+  return (
+    <>
+      <NavBar />
+      <div className={styles.container}>
+        <div key={product.id} className={styles.product}>
+          <section className={styles.productLeft}>
+            <div className={styles.productLeftTop}>
+              <div>
+                <img
+                  className={styles.productLeftTopPhoto}
+                  src={product.images[0]}
+                  alt=""
+                />
+              </div>
+              <div className={styles.productLeftTopList}>
+                <img
+                  className={styles.productLeftTopListImg}
+                  src={product.images[0]}
+                  alt=""
+                />
+                <img
+                  className={styles.productLeftTopListImg}
+                  src={product.images[1]}
+                  alt=""
+                />
+                <img
+                  className={styles.productLeftTopListImg}
+                  src={product.images[2]}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className={styles.productLeftBot}>
+              <div className={styles.productLeftBotSocial}>
+                <p className={styles.productLeftBotSocialShare}>Chia sẻ:</p>
+                <div className={styles.productLeftBotSocialMedia}>
+                  {icons.map((icon) => (
+                    <div
+                      className={styles.productLeftBotSocialMediaItem}
+                      key={icon.id}
+                    >
+                      <a
+                        className={styles.productLeftBotSocialMediaItemLink}
+                        href={icon.url}
+                      >
+                        <img
+                          className={styles.productLeftBotSocialMediaItemImg}
+                          src={icon.logo}
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.productLeftBotLike}>
+                <svg
+                  style={{ height: "30px" }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                </svg>
+                <p className={styles.productLeftBotLikeNumber}>
+                  Đã thích ({product.liked})
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className={styles.productRight}>
+            <div className={styles.productRightTitle}>
+              <div className={styles.productRightTitleTag}>Yêu Thích + </div>
+              <h1 className={styles.productRightTitleName}>{product.name}</h1>
+            </div>
+            <div className={styles.productRightReview}>
+              <div className={styles.productRightReviewLeft}>
+                <div className={styles.productRightReviewLeftRating}>
+                  <p className={styles.productRightReviewLeftRatingNumber}>
+                    5.0
+                  </p>
+                  <i
+                    className="fa-solid fa-star"
+                    style={{ color: "yellow ", fontSize: "1.3rem" }}
+                  ></i>
+                  <i
+                    className="fa-solid fa-star"
+                    style={{ color: "yellow ", fontSize: "1.3rem" }}
+                  ></i>
+                  <i
+                    className="fa-solid fa-star"
+                    style={{ color: "yellow ", fontSize: "1.3rem" }}
+                  ></i>
+                  <i
+                    className="fa-solid fa-star"
+                    style={{ color: "yellow ", fontSize: "1.3rem" }}
+                  ></i>
+                  <i
+                    className="fa-solid fa-star"
+                    style={{ color: "yellow ", fontSize: "1.3rem" }}
+                  ></i>
+                </div>
+                <div className={styles.productRightReviewLeftReviews}>
+                  <div className={styles.productRightReviewLeftReviewsNumber}>
+                    {product.review}
+                  </div>
+                  <div className={styles.productRightReviewLeftReviewsContent}>
+                    Đánh giá
+                  </div>
+                </div>
+                <div className={styles.productRightReviewLeftSold}>
+                  <div className={styles.productRightReviewLeftSoldContent}>
+                    Đã bán
+                  </div>
+                  <div className={styles.productRightReviewLeftSoldNumber}>
+                    {product.sold}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.productRightReviewReport}>
+                <button
+                  onClick={handleVisible}
+                  className={styles.productRightReviewReportBtn}
+                >
+                  Tố cáo
+                </button>
+                {visible && <ReportForm />}
+              </div>
+            </div>
+            <div className={styles.productRightFlash}>
+              <div className={styles.productRightFlashLeft}>
+                <img
+                  className={styles.productRightFlashLeftImg}
+                  src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/8eebfcdc539676df4457.svg"
+                  alt=""
+                />
+              </div>
+              <div className={styles.productRightFlashRight}>
+                <img
+                  className={styles.productRightFlashRightImg}
+                  src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/26cb3f2fda38eb6ddcc1.svg"
+                  alt=""
+                />
+                <div className={styles.productRightFlashRightTitle}>
+                  Kết thúc trong :
+                </div>
+                <Clock />
+              </div>
+            </div>
+            <div className={styles.productRightPrice}>
+              <div style={{ display: "flex" }}>
+                <span style={{ color: "#ee4d2d" }}>&#8363;</span>
+                <strong className={styles.productRightPriceSale}>
+                  {product.sale_price}
+                </strong>
+              </div>
+              <div style={{ display: "flex", margin: " 0 10px" }}>
+                <span style={{ color: "#575757", fontSize: "1.2rem" }}>
+                  &#8363;
+                </span>
+                <p className={styles.productRightPriceOri}>{product.price}</p>
+              </div>
+
+              <span className={styles.productRightPricePercent}>
+                {product.sale}%
+              </span>
+            </div>
+            <div className={styles.productRightDetail}>
+              <div className={styles.productRightDetailShip}>
+                <div className={styles.productRightDetailShipTitle}>
+                  Vận Chuyển
+                </div>
+                <div className={styles.productRightDetailShipContent}>
+                  <img
+                    className={styles.productRightDetailShipContentImg}
+                    src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/f1f65ec969d238ed62ff.svg"
+                    alt=""
+                  />
+                  <p className={styles.productRightDetailShipDay}>
+                    Nhận hàng trong vòng 2 ngày
+                  </p>
+                </div>
+              </div>
+              <div className={styles.productRightDetailSecurity}>
+                <div className={styles.productRightDetailSecurityTitle}>
+                  An Tâm Mua Sắm Cùng Shopee
+                </div>
+                <div className={styles.productRightDetailSecurityContent}>
+                  <img
+                    className={styles.productRightDetailSecurityContentImg}
+                    src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/281bf4388d58a7cc965a.svg"
+                    alt=""
+                  />
+                  <p className={styles.productRightDetailSecurityContentDay}>
+                    Trả hàng miễn phí 15 ngày - Bảo hiểm Thời trang
+                  </p>
+                  <span
+                    className={styles.productRightDetailSecurityContentDayIcon}
+                  >
+                    &#8744;
+                  </span>
+                  <div className={styles.productRightDetailSecurityContentForm}>
+                    <SecurityForm />
+                  </div>
+                </div>
+              </div>
+              <div>
+                {product.variants.map((variant) => (
+                  <div
+                    className={styles.productRightDetailVariant}
+                    key={variant.id}
+                  >
+                    <p className={styles.productRightDetailVariantTitle}>
+                      {variant.title}
+                    </p>
+                    <div className={styles.productRightDetailVariantList}>
+                      {variant.options.map((option) => (
+                        <button
+                          className={styles.productRightDetailVariantItem}
+                          key={option.variant_option_id}
+                          onClick={() =>
+                            handleChecked(option.variant_option_id, variant.id)
+                          }
+                        >
+                          <p
+                            className={
+                              styles.productRightDetailVariantItemTitle
+                            }
+                          >
+                            {option.variant_option_name}
+                          </p>
+                          {checked === option.variant_option_id && (
+                            <img
+                              className={
+                                styles.productRightDetailVariantItemChecked
+                              }
+                              src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/ec6dc144acb66ebd1687.svg"
+                              alt=""
+                            />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <div className={styles.productRightDetailQuantity}>
+                  <div className={styles.productRightDetailQuantityTitle}>
+                    Số Lượng
+                  </div>
+                  <div className={styles.productRightDetailQuantityContent}>
+                    <button
+                      disabled
+                      className={styles.productRightDetailQuantityContentBtn}
+                      onClick={() => setCount((count) => count - 1)}
+                    >
+                      &minus;
+                    </button>
+                    <input
+                      className={styles.productRightDetailQuantityContentInput}
+                      type="text"
+                      placeholder={count.toString()}
+                    />
+                    <button
+                      disabled
+                      className={styles.productRightDetailQuantityContentBtn}
+                      onClick={() => setCount((count) => count + 1)}
+                    >
+                      &#43;
+                    </button>
+
+                    <div
+                      className={styles.productRightDetailQuantityContentMore}
+                    >
+                      <p>&#10100;kho&#10101;</p>
+                      <p style={{ marginLeft: "3px" }}>sản phẩm có sẵn</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.productRightButton}>
+              <button className={styles.productRightButtonAdd}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                <p className={styles.productRightButtonAddContent}>
+                  Thêm Vào Giỏ Hàng
+                </p>
+              </button>
+              <button className={styles.productRightButtonBuy}>
+                <p className={styles.productRightButtonBuyContent}>Mua Ngay</p>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Product;

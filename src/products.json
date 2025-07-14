@@ -1,0 +1,378 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "[KÈM QUÀ]Giày đá bóng Wika QH19 Z-Vol Chính Hãng Cao cấp Microfiber Đệm lót Eva Trọng lượng siêu nhẹ",
+      "images": [
+        "./src/img/ListItem/ListItem1a.png",
+        "./src/img/ListItem/ListItem1b.png",
+        "./src/img/ListItem/ListItem1c.png"
+      ],
+      "price": "650.000",
+      "sold": 500,
+      "review": 394,
+      "liked": 174,
+      "sale": -24.3,
+      "sale_price": "492.500",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            {
+              "variant_option_id": 1,
+              "variant_option_name": "Trắng Hồng + Quà"
+            },
+            { "variant_option_id": 2, "variant_option_name": "Xanh Cam + Quà" },
+            { "variant_option_id": 3, "variant_option_name": "Xám Xanh + Quà" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Kích cỡ (Size)",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "39" },
+            { "variant_option_id": 20, "variant_option_name": "40" },
+            { "variant_option_id": 30, "variant_option_name": "41" },
+            { "variant_option_id": 40, "variant_option_name": "42" },
+            { "variant_option_id": 50, "variant_option_name": "43" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Khẩu Trang 5D 3 Lớp Người Lớn Kháng Khuẩn Chống Nắng",
+      "images": [
+        "./src/img/ListItem/ListItem2a.png",
+        "./src/img/ListItem/ListItem2b.png",
+        "./src/img/ListItem/ListItem2c.png"
+      ],
+      "price": "60.000 - 250.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -22,
+      "sale_price": "47.000 - 220.000",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "TRẮNG" },
+            { "variant_option_id": 2, "variant_option_name": "ĐEN" },
+            { "variant_option_id": 3, "variant_option_name": "RÊU" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Số Lượng",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "100 Cái" },
+            { "variant_option_id": 2, "variant_option_name": "200 Cái" },
+            { "variant_option_id": 3, "variant_option_name": "300 Cái" },
+            { "variant_option_id": 4, "variant_option_name": "500 Cái" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Máy Xay Đa Năng Osaka Nhật Bản - Máy Xay Sinh Tố, Máy xay Thịt Cao Cấp-Lưỡi Dao Lớn Không Gỉ",
+      "images": [
+        "./src/img/ListItem/ListItem3a.png",
+        "./src/img/ListItem/ListItem3b.png",
+        "./src/img/ListItem/ListItem3c.png"
+      ],
+      "price": "109.250",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -18.4,
+      "sale_price": "89.250",
+      "variants": []
+    },
+    {
+      "id": 4,
+      "name": "Mũ lưỡi trai màu trơn chất liệu cotton kiểu dáng thời trang cao cấp",
+      "images": [
+        "./src/img/ListItem/ListItem4a.png",
+        "./src/img/ListItem/ListItem4b.png",
+        "./src/img/ListItem/ListItem4c.png"
+      ],
+      "price": "80.137 - 140.276",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -50,
+      "sale_price": "40.159 - 85.258",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen form cứng" },
+            { "variant_option_id": 2, "variant_option_name": "Kem form cứng" },
+            {
+              "variant_option_id": 3,
+              "variant_option_name": "Xanh lá form cứng"
+            },
+            { "variant_option_id": 4, "variant_option_name": "Đen" },
+            { "variant_option_id": 5, "variant_option_name": "Kem" },
+            { "variant_option_id": 6, "variant_option_name": "Xám" },
+            { "variant_option_id": 7, "variant_option_name": "Xanh đen" },
+            { "variant_option_id": 8, "variant_option_name": "Nâu coffee" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Tủ Lạnh Sharp Inverter 626 Lít SJ-FX630V-ST",
+      "images": [
+        "./src/img/ListItem/ListItem5a.png",
+        "./src/img/ListItem/ListItem5b.png",
+        "./src/img/ListItem/ListItem5c.png"
+      ],
+      "price": "28.820.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -47.5,
+      "sale_price": "15.145.000",
+      "variants": []
+    },
+    {
+      "id": 6,
+      "name": "Set 10 đôi Tất  trắng đen nam nữ cổ cao cổ trung cổ thấp chất liệu cotton dệt kim",
+      "images": [
+        "./src/img/ListItem/ListItem6a.png",
+        "./src/img/ListItem/ListItem6b.png",
+        "./src/img/ListItem/ListItem6c.png"
+      ],
+      "price": "90.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -45,
+      "sale_price": "50.000",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "5 Đen" },
+            { "variant_option_id": 2, "variant_option_name": "5 Xám nhạt" },
+            { "variant_option_id": 3, "variant_option_name": "5 Trắng" },
+
+            { "variant_option_id": 5, "variant_option_name": "10 đen" },
+            { "variant_option_id": 6, "variant_option_name": "10 xám nhạt" },
+            { "variant_option_id": 7, "variant_option_name": "10 trắng" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "cổ cao" },
+            { "variant_option_id": 2, "variant_option_name": "cổ thấp" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cân điện tử, cân sức khỏe hình heo hồng mặt kiếng cường lực max 180kg",
+      "images": [
+        "./src/img/ListItem/ListItem7a.png",
+        "./src/img/ListItem/ListItem7b.png",
+        "./src/img/ListItem/ListItem7c.png"
+      ],
+      "price": "122.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -19,
+      "sale_price": "99.000",
+      "variants": []
+    },
+    {
+      "id": 8,
+      "name": "Ấm Siêu Tốc Thủy Tinh Cao Cấp 2.0 Lít CUCKDD Model GD-ST16 Có Đèn Led Tự Ngắt Khi Sôi",
+      "images": [
+        "./src/img/ListItem/ListItem8a.png",
+        "./src/img/ListItem/ListItem8b.png",
+        "./src/img/ListItem/ListItem8c.png"
+      ],
+      "price": "89.000",
+      "sold": 12.1,
+      "review": 200,
+      "liked": 500,
+      "sale": -22,
+      "sale_price": "69.000",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen" },
+            { "variant_option_id": 2, "variant_option_name": "Xanh" },
+            { "variant_option_id": 3, "variant_option_name": "Hồng" },
+            {
+              "variant_option_id": 4,
+              "variant_option_name": "Màu ngẫu nhiên"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Nồi Cơm Điện Mini ChiGO 1.2L Nấu Cơm Hầm Cháo Đa Năng",
+      "images": [
+        "./src/img/ListItem/ListItem9a.png",
+        "./src/img/ListItem/ListItem9b.png",
+        "./src/img/ListItem/ListItem9c.png"
+      ],
+      "price": "399.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -46.7,
+      "sale_price": "216.750",
+      "variants": []
+    },
+    {
+      "id": 10,
+      "name": "[Túi 1KG ]Củ Cải Khô Tây Bắc Ngon Giòn Ngọt Nấu Canh Trộn Gỏi Nộm Nấu Đa Dạng Món Ngon",
+      "images": [
+        "./src/img/ListItem/ListItem10a.png",
+        "./src/img/ListItem/ListItem10b.png",
+        "./src/img/ListItem/ListItem10c.png"
+      ],
+      "price": "28.000 - 58.600",
+      "sold": 14.8,
+      "review": 200,
+      "liked": 500,
+      "sale": -24,
+      "sale_price": "36.800 - 58.600",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Khối Lượng",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "500G LOẠI 1" },
+            { "variant_option_id": 2, "variant_option_name": "1KG LOẠI 1" },
+            { "variant_option_id": 3, "variant_option_name": "500G LOẠI 2" },
+            { "variant_option_id": 4, "variant_option_name": "1KG LOẠI 2" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Áo babydoll linen kiểu xinh tay phồng tiểu thư công chúa bo thân nơ coquette ngực xinh xắn ",
+      "images": [
+        "./src/img/ListItem/ListItem11a.png",
+        "./src/img/ListItem/ListItem11b.png",
+        "./src/img/ListItem/ListItem11c.png"
+      ],
+      "price": "220.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -36,
+      "sale_price": "140.000",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đỏ 329" },
+            {
+              "variant_option_id": 2,
+              "variant_option_name": "Xanh than 329"
+            },
+            { "variant_option_id": 3, "variant_option_name": "Be 329" },
+            { "variant_option_id": 4, "variant_option_name": "Đen 329" },
+            {
+              "variant_option_id": 5,
+              "variant_option_name": "Vàng pastel 329"
+            },
+            {
+              "variant_option_id": 6,
+              "variant_option_name": "Xanh pastel 329"
+            },
+            { "variant_option_id": 7, "variant_option_name": "Trắng 329" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "S" },
+            { "variant_option_id": 2, "variant_option_name": "M" },
+            { "variant_option_id": 3, "variant_option_name": "L(Bigsize)" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Balo Unisex Size Lớn Chống Nước, Có ngăn laptop, ba lô cỡ lớn đa năng đựng laptop sách vở quần áo.",
+      "images": [
+        "./src/img/ListItem/ListItem12a.png",
+        "./src/img/ListItem/ListItem12b.png",
+        "./src/img/ListItem/ListItem12c.png"
+      ],
+      "price": "190.000",
+      "sold": 500,
+      "review": 200,
+      "liked": 500,
+      "sale": -40,
+      "sale_price": "119.000",
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            {
+              "variant_option_id": 1,
+              "variant_option_name": "COMBO ĐEN 13 INCH"
+            },
+            {
+              "variant_option_id": 2,
+              "variant_option_name": "COMBO ĐEN 14 INCH"
+            },
+            {
+              "variant_option_id": 3,
+              "variant_option_name": "COMBO ĐEN 15.6 INCH"
+            },
+            {
+              "variant_option_id": 4,
+              "variant_option_name": "COMBO ĐEN 17 INCH"
+            },
+            { "variant_option_id": 5, "variant_option_name": "BALO ĐEN" },
+            { "variant_option_id": 6, "variant_option_name": "BALO XÁM" },
+            {
+              "variant_option_id": 7,
+              "variant_option_name": "COMBO XÁM 13INCH"
+            },
+            {
+              "variant_option_id": 8,
+              "variant_option_name": "COMBO XÁM 14INCH"
+            },
+            {
+              "variant_option_id": 9,
+              "variant_option_name": "COMBO XÁM 15.6 INCH"
+            },
+            {
+              "variant_option_id": 10,
+              "variant_option_name": "COMBO XÁM 17INCH"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

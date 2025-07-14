@@ -1,0 +1,35 @@
+@use "../common/index.module" as *;
+.cate {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 1000px;
+  &Title {
+    padding: 40px 0 20px;
+    font-weight: 400;
+  }
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    &Link {
+      text-decoration: none;
+      color: $text-color;
+    }
+    &Item {
+      @include dflex;
+      justify-content: start;
+      flex-basis: 1;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      margin: 0 10px 10px 0;
+      padding: 15px 20px;
+      width: 240px;
+      &Img {
+        height: 40px;
+        width: 40px;
+      }
+      &Name {
+        margin-left: 15px;
+        font-weight: 350;
+      }
+    }
+  }
+}

@@ -1,0 +1,336 @@
+@use "../common/index.module" as *;
+.container {
+  background-color: rgba($color: #fef9f7, $alpha: 0.8);
+  padding-top: 180px;
+}
+.product {
+  height: 100vh;
+  @include bg;
+  display: flex;
+  position: relative;
+  &Left {
+    padding: 15px;
+    &Top {
+      &Photo {
+        height: 400px;
+        width: 400px;
+      }
+      &List {
+        display: flex;
+        &Img {
+          height: 120px;
+          width: 120px;
+          margin-right: 20px;
+        }
+      }
+    }
+    &Bot {
+      display: flex;
+      margin-top: 25px;
+      &Social {
+        height: 30px;
+        border-right: 1px solid rgba($color: #333, $alpha: 0.15);
+        padding: 0 18px 0 10px;
+        @include dflex;
+        &Media {
+          display: flex;
+          &Item {
+            padding: 5px;
+            &Img {
+              height: 25px;
+              width: 25px;
+            }
+          }
+        }
+      }
+      &Like {
+        @include dflex;
+        padding: 0 18px;
+        font-size: 1.9rem;
+        &Number {
+          padding-left: 8px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &Right {
+    padding: 20px 35px 0;
+    width: 750px;
+    &Title {
+      display: flex;
+      &Tag {
+        width: 20%;
+        height: 22px;
+        font-size: 1.25rem;
+        background-color: $primary-color;
+        color: $bg-color;
+        border-radius: 2px;
+        @include dflex;
+        margin-right: 15px;
+      }
+      &Name {
+        font-weight: normal;
+      }
+    }
+    &Review {
+      margin-top: 10px;
+      @include dflex;
+      justify-content: space-between;
+      &Left {
+        display: flex;
+        align-items: center;
+        &Rating {
+          display: flex;
+          align-items: center;
+          border-right: 1px solid rgba($color: $product-color, $alpha: 0.3);
+          padding-right: 15px;
+          &Number {
+            margin-right: 5px;
+            text-decoration: underline;
+            font-size: 1.8rem;
+          }
+        }
+        &Reviews {
+          @extend .productRightReviewLeftRating;
+          margin: 0 15px;
+          &Number {
+            @extend .productRightReviewLeftRatingNumber;
+          }
+          &Content {
+            color: $product-color;
+          }
+        }
+        &Sold {
+          display: flex;
+          align-items: center;
+          &Content {
+            color: $product-color;
+            margin-right: 5px;
+          }
+          &Number {
+            font-size: 1.8rem;
+          }
+        }
+      }
+      &Report {
+        display: flex;
+        align-items: center;
+        &Btn {
+          border: none;
+          background-color: #fff;
+          color: $product-color;
+          padding: 0 5px;
+          font-size: 1.7rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &Flash {
+      margin-top: 10px;
+      height: 32px;
+      padding: 0 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $primary-color;
+      &Left {
+        padding-top: 3px;
+        padding-left: 5px;
+        height: 28px;
+        width: 28px;
+        &Img {
+        }
+      }
+      &Right {
+        display: flex;
+        align-items: center;
+        color: $bg-color;
+        &Title {
+          padding: 0 7px;
+          font-size: 1.7rem;
+        }
+      }
+    }
+    &Price {
+      // margin-top: 10px;
+      background-color: rgba($color: #000000, $alpha: 0.04);
+      padding: 15px 20px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      &Sale {
+        font-size: 2.4rem;
+        color: $primary-color;
+        padding-left: 3px;
+      }
+      &Ori {
+        padding-left: 3px;
+        text-decoration: line-through;
+        color: $product-color;
+      }
+      &Percent {
+        font-size: 1.2rem;
+        background-color: #feeeea;
+        color: $mall-color;
+        width: fit-content;
+      }
+    }
+    &Detail {
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      &Ship {
+        display: flex;
+        padding-top: 5px;
+        align-items: center;
+        margin-bottom: 18px;
+        font-size: 1.4rem;
+        &Title {
+          @include productDetailTitle;
+        }
+        &Content {
+          @include dflex;
+          &Img {
+            padding-right: 5px;
+          }
+          &Day {
+          }
+        }
+      }
+      &Security {
+        @extend .productRightDetailShip;
+        &Title {
+          @include productDetailTitle;
+        }
+        &Content {
+          @include dflex;
+          &:hover &Form {
+            visibility: visible;
+          }
+          &Form {
+            visibility: hidden;
+          }
+          &Img {
+            padding-right: 5px;
+          }
+          &Day {
+            padding-right: 10px;
+            &Icon {
+              color: $product-color;
+            }
+          }
+        }
+      }
+      &Variant {
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        &Title {
+          @include productDetailTitle;
+        }
+        &List {
+          margin: 10px 0 20px;
+          display: flex;
+          flex-basis: 500px;
+          flex-wrap: wrap;
+          width: 700px;
+          max-height: 200px;
+          overflow-x: hidden;
+        }
+        &Item {
+          position: relative;
+          margin: 8px 8px 0 0;
+          padding: 5px;
+          height: 40px;
+          width: fit-content;
+          padding: 20px;
+          @include dflex;
+          border: 1px solid rgba($color: #000000, $alpha: 0.09);
+          background-color: #fff;
+          &:hover {
+            cursor: pointer;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+          }
+          &Img {
+            width: 25px;
+            height: 25px;
+          }
+          &Title {
+            font-size: 1.4rem;
+            padding-left: 2px;
+          }
+          &Checked {
+            height: 10px;
+            width: 10px;
+            background-color: $primary-color;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+      &Quantity {
+        display: flex;
+        align-items: center;
+        margin: 25px 0;
+        &Title {
+          @include productDetailTitle;
+        }
+        &Content {
+          display: flex;
+          justify-content: center;
+          align-items: start;
+          &Input {
+            height: 30px;
+            width: 50px;
+            text-align: center;
+          }
+          &Btn {
+            height: 30px;
+            width: 30px;
+            background-color: #fff;
+            border-color: rgba($color: #000000, $alpha: 0.4);
+            cursor: pointer;
+          }
+          &More {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            margin-top: 3px;
+            color: $product-color;
+          }
+        }
+      }
+    }
+    &Button {
+      display: flex;
+      margin-left: 20px;
+      &Add {
+        @include productbtn;
+        @include dlfex;
+        color: $primary-color;
+        background-color: rgba(255, 87, 34, 0.1);
+        &:hover {
+          background-color: rgba(255, 87, 34, 0.2);
+          cursor: pointer;
+        }
+        &Content {
+          padding-left: 10px;
+        }
+      }
+      &Buy {
+        @include productbtn;
+        background-color: $primary-color;
+        color: $bg-color;
+        width: 180px;
+        &:hover {
+          background-color: rgba($color: $primary-color, $alpha: 0.8);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

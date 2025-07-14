@@ -1,0 +1,23 @@
+@use "./index.module" as *;
+.formMainTop {
+  margin-bottom: 10px;
+  &Input {
+    width: 340px;
+    height: 4rem;
+    padding: 12px;
+  }
+  &Btn {
+    @extend .formMainTopInput;
+    padding: 0;
+    border: none;
+    margin-bottom: 30px;
+    background-color: $primary-color;
+    color: $bg-color;
+    cursor: pointer;
+  }
+  &Note {
+    font-size: 1.3rem;
+    padding-top: 4px;
+    visibility: hidden;
+  }
+}

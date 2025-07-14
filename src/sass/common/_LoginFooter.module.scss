@@ -1,0 +1,15 @@
+@use "./index.module" as *;
+.footer {
+  @include dflex;
+  margin-bottom: 30px;
+  &Content {
+    padding-right: 5px;
+    color: rgba($color: #000000, $alpha: 0.3);
+    font-size: 1.4rem;
+  }
+  &Link {
+    text-decoration: none;
+    color: $primary-color;
+    font-size: 1.4rem;
+  }
+}

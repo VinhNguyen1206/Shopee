@@ -1,0 +1,21 @@
+@use "../common/index.module" as *;
+.container {
+  background-color: rgb(238, 77, 45);
+  height: 700px;
+  padding: 0 150px;
+  &Img {
+    height: 700px;
+    background-image: url("/src/img/SignUp/SignUpbg.png");
+    background-repeat: no-repeat;
+    margin: 0 240px;
+    @include dflex;
+    flex-direction: column;
+    align-items: end;
+  }
+  &Content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 450px;
+  }
+}

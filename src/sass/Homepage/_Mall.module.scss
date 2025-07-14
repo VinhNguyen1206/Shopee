@@ -1,0 +1,79 @@
+@use "../common/index.module" as *;
+.mall {
+  @include bg;
+  margin-top: 35px;
+  position: relative;
+  padding-right: 15px;
+  &Top {
+    @include title;
+    &Title {
+      @include dflex;
+      &Name {
+        text-decoration: none;
+        color: $mall-color;
+        width: 110px;
+      }
+      &Event {
+        display: flex;
+        &Item {
+          @include dflex;
+          margin-right: 15px;
+        }
+        &Img {
+          height: 20px;
+        }
+      }
+    }
+    &Btn {
+      @include mallBtn;
+    }
+  }
+  &Bot {
+    display: flex;
+    &Link {
+    }
+    &Img {
+      padding: 10px 0 0 15px;
+    }
+    &List {
+      margin-bottom: -10px;
+      position: relative;
+      @include scrollbar;
+      &Top,
+      &Bottom {
+        display: flex;
+      }
+      &Item {
+        height: 236px;
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+        @include dflex;
+        position: relative;
+        &Link {
+          text-decoration: none;
+        }
+        &Img {
+          height: 216px;
+          width: 180px;
+        }
+        &Desc {
+          text-align: center;
+          color: $mall-color;
+          width: 172px;
+          font-size: 1.8rem;
+          position: absolute;
+          bottom: 20px;
+        }
+      }
+      &Btn {
+        @include mallBtn;
+        position: absolute;
+        z-index: 1;
+        right: -97.5%;
+        top: 70%;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

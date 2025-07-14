@@ -1,0 +1,35 @@
+@use "../common/index.module" as *;
+.navbar {
+  @include dflex;
+  justify-content: space-around;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  padding: 0 150px;
+  z-index: 1;
+
+  &Left {
+    height: 70px;
+    @include dflex;
+    color: $primary-color;
+    &Link {
+      &Img {
+        height: 40px;
+      }
+    }
+    &Title {
+      border-left: 1px solid $primary-color;
+      height: 30px;
+      margin: 20px;
+      padding-left: 15px;
+      padding-top: 10px;
+    }
+  }
+  &Right {
+    &Link {
+      text-decoration: none;
+      color: $text-color;
+      font-size: 1.4rem;
+    }
+  }
+}

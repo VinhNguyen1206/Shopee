@@ -1,0 +1,38 @@
+@use "./index.module" as *;
+.more {
+  &Separate {
+    padding-bottom: 14px;
+    @include dflex;
+    &Or {
+      padding: 0 16px;
+      color: #dbdbdb;
+      font-size: 1.3rem;
+    }
+    &Line {
+      background-color: #dbdbdb;
+      height: 1px;
+      width: 100%;
+    }
+  }
+  &Global {
+    display: flex;
+    &Btn {
+      background-color: $bg-color;
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
+      @include dflex;
+      width: 165px;
+      height: 40px;
+      margin: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($color: #000000, $alpha: 0.05);
+      }
+    }
+    &Img {
+      height: 24px;
+      padding-right: 10px;
+    }
+  }
+}
+
+//

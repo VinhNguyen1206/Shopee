@@ -1,0 +1,4 @@
+@use "../common/index.module" as *;
+.seeall {
+  @include sahover;
+}

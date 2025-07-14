@@ -1,0 +1,76 @@
+@use "../common/index.module" as *;
+.banner {
+  max-width: 65vw;
+  padding-top: 160px;
+  margin: 0 auto;
+  &Img {
+    display: flex;
+    &Cover {
+      position: relative;
+      &:hover &Btn1,
+      &:hover &Btn2 {
+        opacity: 0.7;
+      }
+      &Btn1,
+      &Btn2 {
+        background-color: rgba($color: $text-color, $alpha: 0.9);
+        height: 60px;
+        width: 35px;
+        @include dflex;
+        position: absolute;
+        font-size: 3rem;
+        color: $bg-color;
+        opacity: 0;
+        transition: 0.3s;
+        // z-index: 2;
+        top: 35%;
+      }
+      &Btn1 {
+        left: 0;
+      }
+      &Btn2 {
+        right: 0;
+      }
+    }
+    &Big {
+      height: 235px;
+      width: 830px;
+    }
+    &Small {
+      padding-left: 3px;
+      &:hover {
+        cursor: pointer;
+      }
+      &Top,
+      &Bot {
+        height: 115px;
+        width: 415px;
+      }
+    }
+  }
+  &Choice {
+    display: flex;
+    &Link {
+      text-decoration: none;
+      color: $text-color;
+    }
+    &Item {
+      width: 150px;
+      margin: 15px 30px 0;
+      text-align: center;
+      transition: transform 0.1s ease-in-out;
+      &:hover,
+      &:focus {
+        transform: translate(0, -2px);
+      }
+      &Img {
+        height: 45px;
+        width: 45px;
+      }
+      &Desc {
+        font-size: 1.3rem;
+        font-weight: 350;
+      }
+    }
+  }
+}

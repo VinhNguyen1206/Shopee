@@ -1,0 +1,58 @@
+@use "../common/index.module" as *;
+.search {
+  @include bg;
+  margin-top: 35px;
+  position: relative;
+  &Top {
+    @include title;
+    &Title {
+      color: $primary-color;
+    }
+  }
+  &List {
+    display: flex;
+    @include scrollbar;
+    &Item {
+      width: 200px;
+      height: 280px;
+      text-decoration: none;
+      margin-right: 7px;
+      &::marker {
+        list-style-type: none;
+      }
+      &Cover {
+        position: relative;
+      }
+      &Link {
+        width: 200px;
+        height: 265px;
+        padding: 20px 10px;
+        text-decoration: none;
+        display: block;
+      }
+      &Img {
+        width: 180px;
+        height: 180px;
+      }
+      &Sold {
+        position: absolute;
+        height: 25px;
+        color: $bg-color;
+        bottom: 5px;
+        width: 180px;
+        text-align: center;
+        background-color: rgba($color: $text-color, $alpha: 0.25);
+        @include dflex;
+      }
+      &Title {
+        color: #555;
+        margin-top: 20px;
+      }
+      &Span {
+        height: 30px;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

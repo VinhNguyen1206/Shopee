@@ -1,0 +1,8 @@
+@use "../common/index.module" as *;
+.background {
+  @include dflex;
+  justify-content: space-evenly;
+  height: 75vh;
+  margin: 5px 140px;
+  z-index: -1;
+}

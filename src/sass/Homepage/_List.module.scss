@@ -1,0 +1,102 @@
+@use "../common/index.module" as *;
+.list {
+  @include bg;
+  margin-top: 15px;
+  background-color: rgba($color: #fef9f7, $alpha: 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  height: 650px;
+  &Link {
+    text-decoration: none;
+    width: 202px;
+    height: 305px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    &Footer {
+      background-color: $primary-color;
+      color: $bg-color;
+      height: 30px;
+      @include dflex;
+      position: absolute;
+      left: -1px;
+      width: 202px;
+      visibility: hidden;
+      z-index: -1;
+    }
+    &:hover {
+      transform: translate(0, -2px);
+      border: 1px solid $primary-color;
+    }
+    &:hover &Footer {
+      visibility: visible;
+      z-index: 1;
+    }
+  }
+  &Item {
+    width: 200px;
+    position: relative;
+    &Top {
+      width: 200px;
+      height: 190px;
+      position: relative;
+      &Img {
+        background-size: cover;
+        width: 200px;
+        height: 190px;
+      }
+      &Font {
+        background-image: url("/src/img/ListItem/ListItemsale.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 200px;
+        height: 190px;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+      }
+      &Sale {
+        font-size: 1.4rem;
+        width: 35px;
+        @include dflex;
+        height: 20px;
+        color: $primary-color;
+        background-color: #feeeea;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    &Bot {
+      background-color: $bg-color;
+      height: 100px;
+      width: 200px;
+      padding: 8px;
+      &Name {
+        color: #555;
+        line-height: 20px;
+        height: 40px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-wrap: break-word;
+        overflow: hidden;
+      }
+      &Tag {
+        color: $primary-color;
+        height: 15px;
+        font-size: 1rem;
+        border: 1px solid $primary-color;
+        width: 55px;
+        text-align: center;
+        z-index: 1;
+      }
+      &Price {
+        @include dflex;
+        justify-content: start;
+        color: $primary-color;
+        padding: 10px 0;
+        font-weight: 300;
+      }
+    }
+  }
+}
