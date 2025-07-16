@@ -10,7 +10,7 @@ function Sale() {
         <div className={styles.saleTitleLeft}>
           <img
             className={styles.saleTitleLeftIcon}
-            src="./src/img/flashsale.png"
+            src="/img/flashsale.png"
             alt="..."
           />
           <Clock />

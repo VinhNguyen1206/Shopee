@@ -1,0 +1,26 @@
+@use "./index.module" as *;
+.main {
+  padding: 0 30px 30px;
+  height: 320px;
+  @include dflex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  &Qr {
+    background-image: url("/public/img/LoginQr/loginqr.png");
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 180px;
+    background-size: contain;
+  }
+  &Content {
+    font-size: 2.2rem;
+  }
+  &Btn {
+    border: none;
+    background-color: #fff;
+    color: $form-linkcolor;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+}

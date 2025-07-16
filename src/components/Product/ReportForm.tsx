@@ -1,10 +1,6 @@
 import { useState } from "react";
-
 import styles from "../../sass/Product/_ReportForm.module.scss";
-import { useAppDispatch } from "../../redux/hooks";
-import { openForm } from "../../redux/reportFormSlice";
-const ReportForm = () => {
-  const dispatch = useAppDispatch();
+const ReportForm = ({ handleVisible }: { handleVisible: () => void }) => {
   const reasons = [
     "Sản phẩm có dấu hiệu lừa đảo",
     "Hàng giả hàng nhái",
@@ -17,26 +13,95 @@ const ReportForm = () => {
     "Khác",
     "Sản phẩm bị cám buôn bán(động vật hoang dã, 18+)",
   ];
+  const [title, setTitle] = useState<string>("Chọn lý do");
+  const [description, setDescription] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
+  const [showReport, setShowReport] = useState<boolean>(false);
+
+  // onclick btn send form
+  const handleSubmit = () => {
+    if (description.length < 10 || description.length > 50) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    setDescription("");
+  };
+
+  //onclick toggle show report
+  const handleShowReport = (reason: string) => {
+    setTitle(reason);
+    setShowReport(true);
+    setDescription("");
+  };
+
+  // onclick go back to form
+  const handleBack = () => {
+    setTitle("Chọn lý do");
+    setShowReport(false);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.form}>
-        <header className={styles.formHeader}>
-          <div className={styles.formHeaderTitle}>Chọn lý do</div>
-          <button className={styles.formHeaderBtn}>&#88;</button>
-        </header>
-        <div className={styles.formMain}>
-          {reasons.map((reason) => (
-            <button
-              className={styles.formMainContent}
-              key={reason}
-              onClick={() => dispatch(openForm(reason))}
-              style={{ margin: "5px" }}
-            >
-              {reason}
+      <header className={styles.header}>
+        <div className={styles.headerLeft}>
+          {showReport && (
+            <button onClick={handleBack} className={styles.headerLeftBtn}>
+              <i className="fa-solid fa-arrow-left"></i>
             </button>
-          ))}
+          )}
+          <div className={styles.headerLeftTitle}>{title}</div>
         </div>
-      </div>
+        <button onClick={handleVisible} className={styles.headerBtn}>
+          &#88;
+        </button>
+      </header>
+      {!showReport ? (
+        <div className={styles.form}>
+          <div className={styles.formMain}>
+            {reasons.map((reason) => (
+              <div key={reason}>
+                <button
+                  onClick={() => handleShowReport(reason)}
+                  className={styles.formMainContent}
+                >
+                  {reason}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className={styles.report}>
+          <div className={styles.reportMain}>
+            <div className={styles.reportMainCover}>
+              <p className={styles.reportMainTitle}>Report Description</p>
+              <span className={styles.reportMainTitleSpan}>&lowast;</span>
+            </div>
+            <div>
+              <textarea
+                value={description}
+                className={
+                  error ? styles.reportMainFormColor : styles.reportMainForm
+                }
+                placeholder="Mô tả tố cáo(vui lòng nhập từ 10-50 kí tự)"
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              {error && (
+                <p className={styles.reportMainFormError}>
+                  Description for this reason should have 10 - 50 characters
+                </p>
+              )}
+            </div>
+          </div>
+          <div className={styles.reportFooter}>
+            <div></div>
+            <button onClick={handleSubmit} className={styles.reportFooterBtn}>
+              Gửi Tố Cáo
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

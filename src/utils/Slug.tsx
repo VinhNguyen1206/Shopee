@@ -11,4 +11,4 @@ export function mySlug(str: string): string {
     .replace(/\s+/g, "-") // replace spaces with -
     .replace(/-+/g, "-"); // remove duplicate -
 }
-console.log(mySlug);
+// console.log(mySlug);

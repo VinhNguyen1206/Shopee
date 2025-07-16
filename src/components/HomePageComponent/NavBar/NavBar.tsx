@@ -65,7 +65,7 @@ function NavBar() {
                   <div className={styles.navbarNavRightSupportBox}>
                     <img
                       className={styles.navbarNavRightSupportBoxImg}
-                      src="./src/img/navbarhover.png"
+                      src="/img/navbarhover.png"
                       alt=""
                     />
                     <p className={styles.navbarNavRightSupportBoxContent}>
@@ -128,7 +128,7 @@ function NavBar() {
         <div className={styles.navbarMainIcon}>
           <Link to="/">
             <img
-              src="./src/img/Shopee.png"
+              src="/img/Shopee.png"
               alt=""
               style={{ height: "50px", width: "150px", fill: "white" }}
             />
@@ -161,9 +161,9 @@ function NavBar() {
           </div>
         </div>
         <div className={styles.navbarMainCart}>
-          <a className={styles.navbarMainCartLogo} href="/abc">
+          <Link className={styles.navbarMainCartLogo} to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

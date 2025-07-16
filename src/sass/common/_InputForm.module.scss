@@ -5,6 +5,14 @@
     width: 340px;
     height: 4rem;
     padding: 12px;
+    &Error {
+      @extend .formMainTopInput;
+      border: 1px solid red;
+      background-color: #fff6f7;
+      &:focus {
+        outline-width: 0;
+      }
+    }
   }
   &Btn {
     @extend .formMainTopInput;
@@ -14,10 +22,16 @@
     background-color: $primary-color;
     color: $bg-color;
     cursor: pointer;
+    &:disabled {
+      background-color: rgba($color: $primary-color, $alpha: 0.6);
+      cursor: not-allowed;
+      opacity: 0.6;
+      transition: background-color 0.3s ease;
+    }
   }
   &Note {
     font-size: 1.3rem;
     padding-top: 4px;
-    visibility: hidden;
+    color: red;
   }
 }

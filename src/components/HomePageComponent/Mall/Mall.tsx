@@ -37,7 +37,7 @@ function Mall() {
       </div>
       <div className={styles.mallBot} style={{ height: "462px" }}>
         <Link to="">
-          <img className={styles.mallBotImg} src="./src/img/mall4.png" alt="" />
+          <img className={styles.mallBotImg} src="img/mall4.png" alt="" />
         </Link>
         <div className={styles.mallBotList}>
           <picture className={styles.mallBotListTop}>

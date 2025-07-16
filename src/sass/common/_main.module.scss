@@ -36,3 +36,7 @@
 @use "../Product/Product.module";
 @use "../Product/ReportForm.module";
 @use "../Product/SecurityForm.module";
+@use "../Cart/Cart.module";
+@use "./LoginInput.module";
+@use "./QrLogin.module";
+@use "./QrMain.module";

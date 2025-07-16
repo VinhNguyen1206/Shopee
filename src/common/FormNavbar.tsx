@@ -11,7 +11,7 @@ function FormNavbar({ title = "Đăng nhập" }: NavBarProps) {
           <Link className={styles.navbarNavLeftLink} to="/">
             <img
               className={styles.navbarNavLeftImg}
-              src="src\img\Shopee.png"
+              src="/public/img/Shopee.png"
               alt="shopee"
             />
           </Link>

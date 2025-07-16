@@ -1,7 +1,7 @@
 import ChatBox from "../../../common/Chatbox";
 import FormNavbar from "../../../common/FormNavbar";
 import styles from "../../../sass/SignUp/_SignUp.module.scss";
-import LoginForm from "./Form";
+import LoginForm from "./Form/LoginForm";
 function Login() {
   return (
     <>

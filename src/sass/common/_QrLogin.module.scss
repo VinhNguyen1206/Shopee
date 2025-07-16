@@ -1,0 +1,31 @@
+@use "./index.module" as *;
+.scanform {
+  @include formbg;
+  height: 500px;
+  margin-right: 20px;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: -420px;
+  z-index: 4;
+  &Title {
+    font-size: 2rem;
+  }
+  &Btn {
+    border: none;
+    background-color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    right: 60px;
+  }
+
+  &Img {
+    width: 140%;
+  }
+  &Content {
+    text-align: center;
+  }
+}

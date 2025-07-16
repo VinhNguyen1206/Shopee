@@ -1,0 +1,39 @@
+@use "../common/index.module" as *;
+.form {
+  padding: 0 30px 20px;
+  &Account {
+    width: 100%;
+    margin-bottom: 30px;
+    height: 40px;
+    padding: 12px;
+  }
+  &Cover {
+    display: flex;
+    width: 100%;
+    position: relative;
+    &Password {
+      @extend .formAccount;
+    }
+    &ClickOn,
+    &ClickOff {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      border: none;
+      background-color: #fff;
+    }
+  }
+  &Btn {
+    width: 100%;
+    height: 40px;
+    background-color: $primary-color;
+    color: $bg-color;
+    border: none;
+    &:disabled {
+      background-color: rgba($color: $primary-color, $alpha: 0.6);
+      cursor: not-allowed;
+      opacity: 0.6;
+      transition: background-color 0.3s ease;
+    }
+  }
+}

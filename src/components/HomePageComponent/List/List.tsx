@@ -22,7 +22,7 @@ const List = () => {
               />
               <img
                 className={styles.listItemTopFont}
-                src="./src/img/ListItem/ListItemsale.png"
+                src="img/ListItem/ListItemsale.png"
                 alt=""
               />
               <p className={styles.listItemTopSale}>{product.sale}%</p>

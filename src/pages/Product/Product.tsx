@@ -1,4 +1,4 @@
-import { useEffect, useState, type SetStateAction } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../../components/HomePageComponent/NavBar/NavBar";
 import styles from "../../sass/Product/_Product.module.scss";
 import { icons } from "./ProductConstants";
@@ -10,26 +10,18 @@ import { useParams } from "react-router-dom";
 import { mySlug } from "../../utils/Slug";
 import Clock from "../../components/HomePageComponent/Clock/Clock";
 const Product = () => {
-  const [visible, setVisible] = useState<boolean>(false);
-  const [checked, setChecked] = useState<number | null>(null);
-  const [variants, setVariants] = useState<
-    { variant_option_id: number; variant_id: number }[]
-  >([]);
-  const [product, setProduct] = useState<Products | null>(null);
-  const [count, setCount] = useState<number>(1);
   const { slug } = useParams();
-  const handleVisible = () => {
-    console.log("Toggle checked");
-    setVisible(!visible);
-  };
-  const handleChecked = (variant_option_id: number, variant_id: number) => {
-    const values = {
-      variant_option_id: variant_option_id,
-      variant_id: variant_id,
-    };
-    setVariants((prev) => [...prev, values]);
-    console.log(variants);
-  };
+  const [visible, setVisible] = useState<boolean>(false);
+  const [product, setProduct] = useState<Products | null>(null);
+  const [selectedVariants, setSelectedVariants] = useState<{
+    [id: number]: number;
+  }>({});
+  const [count, setCount] = useState<number>(1);
+  const [showVariantWarning, setShowVariantWarning] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [hoverImage, setHoverImage] = useState<string | null>(null);
+
+  // fetching jsonfile
   useEffect(() => {
     fetch("/src/products.json")
       .then((res) => res.json())
@@ -47,6 +39,67 @@ const Product = () => {
     return <div>Loading ...</div>;
   }
 
+  // check for disabled button
+  const allVariantsSelected = product.variants.every(
+    (variant) => selectedVariants[variant.id] !== undefined
+  );
+
+  // console.log(allVariantsSelected);
+
+  const handleVisible = () => {
+    console.log("Toggle checked");
+    setVisible(!visible);
+  };
+
+  // onclick for quantity
+  const handleDecrease = () => {
+    if (count > 1) {
+      setCount((count) => count - 1);
+    }
+  };
+
+  const handleIncrease = () => {
+    setCount((count) => count + 1);
+  };
+
+  // checked selectedVariants
+  const handleChecked = (variant_option_id: number, variant_id: number) => {
+    setSelectedVariants((prev) => {
+      const value = {
+        ...prev,
+      };
+      if (value[variant_id] === variant_option_id) {
+        delete value[variant_id];
+      } else {
+        value[variant_id] = variant_option_id;
+      }
+      const checkedVariant = product.variants.every(
+        (variant) => value[variant.id] !== undefined
+      );
+      console.log(checkedVariant);
+      if (checkedVariant) {
+        setShowVariantWarning(false);
+      }
+      return value;
+    });
+  };
+
+  // onchange for input only allow typing in numbers
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const numberValue = event.target.value.replace(/[^0-9.]/g, "");
+    setInputValue(numberValue);
+  };
+
+  // onclick for page button
+  const handleClick = () => {
+    if (!allVariantsSelected) {
+      console.log(showVariantWarning);
+      setShowVariantWarning(true);
+      return;
+    }
+    setShowVariantWarning(false);
+  };
+
   return (
     <>
       <NavBar />
@@ -57,26 +110,19 @@ const Product = () => {
               <div>
                 <img
                   className={styles.productLeftTopPhoto}
-                  src={product.images[0]}
+                  src={hoverImage || product.images[0]}
                   alt=""
                 />
               </div>
               <div className={styles.productLeftTopList}>
-                <img
-                  className={styles.productLeftTopListImg}
-                  src={product.images[0]}
-                  alt=""
-                />
-                <img
-                  className={styles.productLeftTopListImg}
-                  src={product.images[1]}
-                  alt=""
-                />
-                <img
-                  className={styles.productLeftTopListImg}
-                  src={product.images[2]}
-                  alt=""
-                />
+                {product.images.map((img, index) => (
+                  <img
+                    src={img}
+                    className={styles.productLeftTopListImg}
+                    key={index}
+                    onMouseEnter={() => setHoverImage(img)}
+                  />
+                ))}
               </div>
             </div>
             <div className={styles.productLeftBot}>
@@ -118,8 +164,10 @@ const Product = () => {
           </section>
           <section className={styles.productRight}>
             <div className={styles.productRightTitle}>
-              <div className={styles.productRightTitleTag}>Yêu Thích + </div>
-              <h1 className={styles.productRightTitleName}>{product.name}</h1>
+              <h1 className={styles.productRightTitleName}>
+                <span className={styles.productRightTitleTag}>Yêu Thích +</span>
+                {product.name}
+              </h1>
             </div>
             <div className={styles.productRightReview}>
               <div className={styles.productRightReviewLeft}>
@@ -172,7 +220,7 @@ const Product = () => {
                 >
                   Tố cáo
                 </button>
-                {visible && <ReportForm />}
+                {visible && <ReportForm handleVisible={handleVisible} />}
               </div>
             </div>
             <div className={styles.productRightFlash}>
@@ -252,88 +300,100 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-              <div>
-                {product.variants.map((variant) => (
-                  <div
-                    className={styles.productRightDetailVariant}
-                    key={variant.id}
-                  >
-                    <p className={styles.productRightDetailVariantTitle}>
-                      {variant.title}
-                    </p>
-                    <div className={styles.productRightDetailVariantList}>
-                      {variant.options.map((option) => (
-                        <button
-                          className={styles.productRightDetailVariantItem}
-                          key={option.variant_option_id}
-                          onClick={() =>
-                            handleChecked(option.variant_option_id, variant.id)
-                          }
-                        >
-                          <p
-                            className={
-                              styles.productRightDetailVariantItemTitle
-                            }
-                          >
-                            {option.variant_option_name}
-                          </p>
-                          {checked === option.variant_option_id && (
-                            <img
-                              className={
-                                styles.productRightDetailVariantItemChecked
-                              }
-                              src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/ec6dc144acb66ebd1687.svg"
-                              alt=""
-                            />
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                <div className={styles.productRightDetailQuantity}>
-                  <div className={styles.productRightDetailQuantityTitle}>
-                    Số Lượng
-                  </div>
-                  <div className={styles.productRightDetailQuantityContent}>
-                    <button
-                      disabled
-                      className={styles.productRightDetailQuantityContentBtn}
-                      onClick={() => setCount((count) => count - 1)}
-                    >
-                      &minus;
-                    </button>
-                    <input
-                      className={styles.productRightDetailQuantityContentInput}
-                      type="text"
-                      placeholder={count.toString()}
-                    />
-                    <button
-                      disabled
-                      className={styles.productRightDetailQuantityContentBtn}
-                      onClick={() => setCount((count) => count + 1)}
-                    >
-                      &#43;
-                    </button>
 
-                    <div
-                      className={styles.productRightDetailQuantityContentMore}
-                    >
-                      <p>&#10100;kho&#10101;</p>
-                      <p style={{ marginLeft: "3px" }}>sản phẩm có sẵn</p>
-                    </div>
+              {product.variants.map((variant) => (
+                <div
+                  className={styles.productRightDetailVariant}
+                  key={variant.id}
+                >
+                  <p className={styles.productRightDetailVariantTitle}>
+                    {variant.title}
+                  </p>
+                  <div className={styles.productRightDetailVariantList}>
+                    {variant.options.map((option) => (
+                      <button
+                        className={styles.productRightDetailVariantItem}
+                        key={option.variant_option_id}
+                        onClick={() =>
+                          handleChecked(option.variant_option_id, variant.id)
+                        }
+                      >
+                        <p
+                          className={styles.productRightDetailVariantItemTitle}
+                        >
+                          {option.variant_option_name}
+                        </p>
+                        {selectedVariants[variant.id] ===
+                          option.variant_option_id && (
+                          <img
+                            className={
+                              styles.productRightDetailVariantItemChecked
+                            }
+                            src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/ec6dc144acb66ebd1687.svg"
+                            alt=""
+                          />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <div className={styles.productRightDetailQuantity}>
+                <div className={styles.productRightDetailQuantityTitle}>
+                  Số Lượng
+                </div>
+                <div className={styles.productRightDetailQuantityContent}>
+                  <button
+                    className={styles.productRightDetailQuantityContentBtn}
+                    onClick={handleDecrease}
+                    disabled={!allVariantsSelected || count <= 1}
+                  >
+                    &minus;
+                  </button>
+                  <input
+                    onChange={handleChange}
+                    className={styles.productRightDetailQuantityContentInput}
+                    placeholder={count.toString()}
+                    type="text"
+                    min="1"
+                    disabled={!allVariantsSelected}
+                    value={inputValue}
+                  />
+                  <button
+                    className={styles.productRightDetailQuantityContentBtn}
+                    onClick={handleIncrease}
+                    disabled={!allVariantsSelected}
+                  >
+                    &#43;
+                  </button>
+                  <div className={styles.productRightDetailQuantityContentMore}>
+                    <p>&#10100;kho&#10101;</p>
+                    <p style={{ marginLeft: "3px" }}>sản phẩm có sẵn</p>
                   </div>
                 </div>
               </div>
+              {showVariantWarning && (
+                <p className={styles.productRightDetailQuantityWarning}>
+                  Vui lòng chọn Phân loại hàng
+                </p>
+              )}
             </div>
             <div className={styles.productRightButton}>
-              <button className={styles.productRightButtonAdd}>
+              <button
+                type="submit"
+                onClick={handleClick}
+                className={styles.productRightButtonAdd}
+              >
                 <i className="fa-solid fa-cart-shopping"></i>
                 <p className={styles.productRightButtonAddContent}>
                   Thêm Vào Giỏ Hàng
                 </p>
               </button>
-              <button className={styles.productRightButtonBuy}>
+              <button
+                type="submit"
+                onClick={handleClick}
+                className={styles.productRightButtonBuy}
+              >
                 <p className={styles.productRightButtonBuyContent}>Mua Ngay</p>
               </button>
             </div>
