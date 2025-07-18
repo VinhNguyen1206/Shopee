@@ -31,6 +31,10 @@
           @include dflex;
           border-right: 1px solid hsla(0, 0%, 100%, 0.22);
           height: 15px;
+          &:last-child {
+            border-right: none;
+            padding-right: 0;
+          }
           &To {
             text-decoration: none;
             color: $bg-color;
@@ -41,7 +45,7 @@
         }
       }
       &Icon {
-        padding: 5px;
+        margin-top: 5px;
         @include dflex;
         &Num1 {
           color: $bg-color;
@@ -221,6 +225,7 @@
     &Cart {
       position: relative;
       padding: 50px;
+      cursor: pointer;
       &Logo {
         position: absolute;
         height: 80px;
@@ -230,10 +235,39 @@
         top: 15px;
         font-size: 2.5rem;
       }
+      &Count {
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        background-color: red;
+        color: #fff;
+        @include dflex;
+        position: absolute;
+        top: 5px;
+        right: 12px;
+      }
+      &Wrapper {
+        animation-fill-mode: forwards;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        &.open {
+          animation: fadeSlideIn 0.4s ease forwards;
+        }
+      }
     }
   }
 }
 .fa-solid.fa-cart-shopping {
   height: 80px;
   width: 50px;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -1,4 +1,4 @@
-import { Link, type To } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../../../../sass/Login/_FormOtp.module.scss";
 import HeaderQr from "../../HeaderQr";
 import InputForm from "../../../../common/InputForm";

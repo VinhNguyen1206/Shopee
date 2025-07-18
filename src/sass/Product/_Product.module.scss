@@ -8,7 +8,6 @@
   padding: 15px;
 }
 .product {
-  height: 100vh;
   @include bg;
   display: flex;
   position: relative;
@@ -142,7 +141,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: $primary-color;
+      background-image: linear-gradient(to right, $primary-color, #ff7337);
       &Left {
         padding-top: 3px;
         padding-left: 5px;

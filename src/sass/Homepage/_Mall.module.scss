@@ -12,6 +12,7 @@
         text-decoration: none;
         color: $mall-color;
         width: 110px;
+        // font-weight: 400;
       }
       &Event {
         display: flex;
@@ -21,6 +22,10 @@
         }
         &Img {
           height: 20px;
+          padding-right: 5px;
+        }
+        &Desc {
+          font-weight: 350;
         }
       }
     }

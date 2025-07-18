@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import NavBar from "../../components/HomePageComponent/NavBar/NavBar";
 import styles from "../../sass/Product/_Product.module.scss";
 import { icons } from "./ProductConstants";
-import type { Products } from "../../types/types";
+import type { CartProduct, ChooseVariants, Products } from "../../types/types";
 import "../../products.json";
 import ReportForm from "../../components/Product/ReportForm";
 import SecurityForm from "../../components/Product/SecurityForm";
-import { useParams } from "react-router-dom";
+import { data, useParams } from "react-router-dom";
 import { mySlug } from "../../utils/Slug";
 import Clock from "../../components/HomePageComponent/Clock/Clock";
+import { useAppDispatch } from "../../redux/hooks";
+import { addToCart } from "../../redux/productSlice";
 const Product = () => {
   const { slug } = useParams();
+  const dispatch = useAppDispatch();
   const [visible, setVisible] = useState<boolean>(false);
   const [product, setProduct] = useState<Products | null>(null);
   const [selectedVariants, setSelectedVariants] = useState<{
@@ -51,13 +54,12 @@ const Product = () => {
     setVisible(!visible);
   };
 
-  // onclick for quantity
+  // onclick for decrease quantity
   const handleDecrease = () => {
-    if (count > 1) {
-      setCount((count) => count - 1);
-    }
+    setCount((count) => count - 1);
   };
 
+  // onclick for increase quantity
   const handleIncrease = () => {
     setCount((count) => count + 1);
   };
@@ -90,14 +92,45 @@ const Product = () => {
     setInputValue(numberValue);
   };
 
-  // onclick for page button
+  // onclick for add product to cart
   const handleClick = () => {
     if (!allVariantsSelected) {
-      console.log(showVariantWarning);
       setShowVariantWarning(true);
       return;
     }
+
+    // create dynamic variants
+    const chooseVariants: ChooseVariants[] = product.variants.map((variant) => {
+      const optionId = selectedVariants[variant.id];
+      const option = variant.options.find(
+        (opt) => opt.variant_option_id === optionId
+      );
+      return {
+        variant_id: variant.id,
+        variant_title: variant.title,
+        option_id: option!.variant_option_id,
+        option_name: option!.variant_option_name,
+      };
+    });
+
+    // create dynamic product to add to cart
+    const selectedProduct: CartProduct = {
+      id: product.id,
+      name: product.name,
+      images: product.images,
+      sale_price: product.sale_price,
+      quantity: count,
+      chooseVariants,
+    };
+    dispatch(addToCart(selectedProduct));
     setShowVariantWarning(false);
+  };
+
+  //auto format to VND
+  const formatVND = (value: number): string => {
+    // Convert number to string with period separators (e.g. 1.100.000)
+    const formatted = value.toLocaleString("vi-VN").replace(/,/g, ".");
+    return `${formatted}`;
   };
 
   return (
@@ -247,7 +280,7 @@ const Product = () => {
               <div style={{ display: "flex" }}>
                 <span style={{ color: "#ee4d2d" }}>&#8363;</span>
                 <strong className={styles.productRightPriceSale}>
-                  {product.sale_price}
+                  {formatVND(product.sale_price * 1000)}
                 </strong>
               </div>
               <div style={{ display: "flex", margin: " 0 10px" }}>
@@ -256,7 +289,6 @@ const Product = () => {
                 </span>
                 <p className={styles.productRightPriceOri}>{product.price}</p>
               </div>
-
               <span className={styles.productRightPricePercent}>
                 {product.sale}%
               </span>

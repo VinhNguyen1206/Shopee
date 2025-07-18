@@ -1,8 +1,7 @@
 import styles from "../../sass/Login/_HeaderQr.module.scss";
-import { Link, type To } from "react-router-dom";
-type LoginQrProps = {
-  link1?: To;
-};
+import { Link } from "react-router-dom";
+import type { LoginQrProps } from "../../types/types";
+
 function SellerHeaderQr({ link1 = "/sellerlogin" }: LoginQrProps) {
   return (
     <div className={styles.formHeader}>

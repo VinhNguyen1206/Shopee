@@ -5,35 +5,50 @@
   background-color: rgba($color: #fef9f7, $alpha: 0.8);
   display: flex;
   flex-wrap: wrap;
-  height: 650px;
+  &Group {
+    position: relative;
+    height: 305px;
+    padding-right: 2px;
+    padding-left: 1px;
+
+    &:hover .listLinkFooter {
+      visibility: visible;
+      transition: all 0.1s ease-in-out;
+    }
+    &:hover .listItem {
+      transform: translate(0, -2px);
+      border: 1px solid $primary-color;
+      transition: all 0.1s ease-in-out;
+    }
+  }
   &Link {
     text-decoration: none;
-    width: 202px;
-    height: 305px;
+    width: 205px;
+    // height: 305px;
     position: relative;
     transition: transform 0.3s ease-in-out;
+    z-index: 0;
+    border: 1px solid transparent;
     &Footer {
       background-color: $primary-color;
       color: $bg-color;
       height: 30px;
       @include dflex;
       position: absolute;
-      left: -1px;
-      width: 202px;
+      left: 0;
+      bottom: -33px;
+      width: 205px;
+      z-index: 200;
       visibility: hidden;
-    }
-    &:hover {
-      transform: translate(0, -2px);
-      border: 1px solid $primary-color;
     }
     &:hover &Footer {
       visibility: visible;
-      z-index: 1;
     }
   }
   &Item {
-    width: 200px;
+    width: 205px;
     position: relative;
+    border: 1px solid transparent;
     &Top {
       width: 200px;
       height: 190px;
@@ -50,7 +65,7 @@
         width: 200px;
         height: 190px;
         position: absolute;
-        z-index: 1;
+        z-index: 10;
         left: 0;
         bottom: 0;
       }
@@ -87,7 +102,7 @@
         border: 1px solid $primary-color;
         width: 55px;
         text-align: center;
-        z-index: 1;
+        z-index: 10;
       }
       &Price {
         @include dflex;

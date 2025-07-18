@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
 import styles from "../../../sass/HomePage/_Search.module.scss";
 import Button from "../Button/Button";
 import SeeAll from "../SeeAll/SeeAll";
-import { list } from "./SearchConstants";
+import { mySlug } from "../../../utils/Slug";
+import productDatas from "../../../products.json";
 
 function Search() {
+  const allProduct = productDatas.products;
+  const productsToRender = allProduct.slice(12, 24);
   return (
     <div className={styles.search}>
       <div className={styles.searchTop}>
@@ -11,24 +15,29 @@ function Search() {
         <SeeAll />
       </div>
       <ul className={styles.searchList}>
-        {list.map((item) => (
-          <div key={item.id} className={styles.searchListItem}>
-            <a className={styles.searchListItemLink} href={item.url}>
+        {productsToRender.map((product) => (
+          <div key={product.id} className={styles.searchListItem}>
+            <Link
+              className={styles.searchListItemLink}
+              to={`/product/${mySlug(product.name)}`}
+            >
               <div className={styles.searchListItemCover}>
                 <img
                   className={styles.searchListItemImg}
-                  src={item.src}
-                  alt={item.title}
+                  src={product.images[0]}
+                  alt={product.name}
                 />
-                <p className={styles.searchListItemSold}>Bán {item.sold}</p>
+                <p className={styles.searchListItemSold}>
+                  Bán {product.sold}+/ tháng
+                </p>
                 <img
                   className={styles.searchListItemSpan}
                   src="./src/img/searchspan.png"
                   alt=""
                 />
               </div>
-              <p className={styles.searchListItemTitle}>{item.title}</p>
-            </a>
+              <p className={styles.searchListItemTitle}>{product.name}</p>
+            </Link>
           </div>
         ))}
       </ul>

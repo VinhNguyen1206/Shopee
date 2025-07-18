@@ -1,1 +1,142 @@
 @use "../common/index.module" as *;
+.cart {
+  display: flex;
+  flex-direction: column;
+  height: 850px;
+  width: 550px;
+  position: relative;
+  right: 150px;
+  bottom: -50px;
+  z-index: 100;
+  background-color: #fff;
+  border: 1px solid rgba($color: #000000, $alpha: 0.4);
+  overflow: hidden;
+  &Header {
+    @include dflex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
+    &Title {
+      color: $product-color;
+      font-size: 2.3rem;
+    }
+    &Btn {
+      width: 60px;
+      height: 30px;
+      border: none;
+      background-color: rgba($color: $primary-color, $alpha: 0.7);
+      border-radius: 3px;
+      font-size: 2.2rem;
+      &:hover {
+        cursor: pointer;
+        background-color: $primary-color;
+      }
+    }
+  }
+  &Cover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 30px;
+    &Btn {
+    }
+  }
+  &Empty {
+    padding-top: 100px;
+    @include dflex;
+    flex-direction: column;
+    &Title {
+      font-size: 3.5rem;
+      padding-bottom: 30px;
+    }
+    &Content {
+      font-size: 2.2rem;
+    }
+    &Img {
+      background-image: url("/img/Cart/CartEmpty.png");
+      background-position: center;
+      margin-top: 15px;
+      width: 100%;
+      height: 500px;
+      background-repeat: no-repeat;
+    }
+  }
+  &List {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-bottom: 20px;
+  }
+  &Item {
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    &Info {
+      margin: 0 15px;
+      // width: 200px;
+      @include dflex;
+      flex-direction: column;
+      align-items: start;
+    }
+    &Img {
+      height: 100px;
+      width: 100px;
+      background-size: contain;
+    }
+    &Name {
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-height: 21px;
+      max-height: 48px;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    &Total {
+      margin-top: 10px;
+      margin-right: 20px;
+    }
+  }
+  &Btn {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &Click {
+      @extend .cartHeaderBtn;
+    }
+    &Quantity {
+      font-size: 1.8rem;
+      padding: 0 10px;
+    }
+    &Remove {
+      @extend .cartHeaderBtn;
+      margin-left: 15px;
+      color: #000000;
+      background-color: #fff;
+    }
+  }
+  &Footer {
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.4);
+    @include dflex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 15px;
+    background-color: #fff;
+    &Buy {
+      @extend .cartHeaderBtn;
+      font-size: 1.7rem;
+      width: 100px;
+      color: $bg-color;
+    }
+    &Clear {
+      @extend .cartFooterBuy;
+      background-color: $text-color;
+      &:hover {
+        background-color: rgba($color: $text-color, $alpha: 0.6);
+      }
+    }
+  }
+}

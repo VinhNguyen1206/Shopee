@@ -1,5 +1,5 @@
 import styles from "../../../../sass/Login/_Form.module.scss";
-import { Link, type To } from "react-router-dom";
+import { Link } from "react-router-dom";
 import More from "../../../../common/More";
 import LoginFooter from "../../../../common/LoginFooter";
 import LoginInput from "../../../../common/LoginInput";

@@ -13,7 +13,7 @@
       "review": 394,
       "liked": 174,
       "sale": -24.3,
-      "sale_price": "492.500",
+      "sale_price": 492,
       "variants": [
         {
           "id": 1,
@@ -53,7 +53,7 @@
       "review": 2170,
       "liked": 686,
       "sale": -22,
-      "sale_price": "97.500 - 195 .000",
+      "sale_price": 195,
       "variants": [
         {
           "id": 1,
@@ -68,8 +68,6 @@
           "id": 2,
           "title": "Số Lượng",
           "options": [
-            { "variant_option_id": 20, "variant_option_name": "200 Cái" },
-            { "variant_option_id": 30, "variant_option_name": "300 Cái" },
             { "variant_option_id": 40, "variant_option_name": "500 Cái" }
           ]
         }
@@ -88,7 +86,7 @@
       "review": 78,
       "liked": 35,
       "sale": -18.4,
-      "sale_price": "89.250",
+      "sale_price": 89,
       "variants": []
     },
     {
@@ -104,7 +102,7 @@
       "review": 500,
       "liked": 260,
       "sale": -34,
-      "sale_price": "93.000",
+      "sale_price": 93,
       "variants": [
         {
           "id": 1,
@@ -133,7 +131,7 @@
       "review": 12,
       "liked": 4,
       "sale": -47.5,
-      "sale_price": "15.145.000",
+      "sale_price": 15145,
       "variants": []
     },
     {
@@ -149,7 +147,7 @@
       "review": 88,
       "liked": 16,
       "sale": -45,
-      "sale_price": "50.000",
+      "sale_price": 50,
       "variants": [
         {
           "id": 1,
@@ -187,7 +185,7 @@
       "review": 23,
       "liked": 1,
       "sale": -19,
-      "sale_price": "99.000",
+      "sale_price": 99,
       "variants": []
     },
     {
@@ -203,7 +201,7 @@
       "review": 434,
       "liked": 165,
       "sale": -22,
-      "sale_price": "69.000",
+      "sale_price": 69,
       "variants": [
         {
           "id": 1,
@@ -233,7 +231,7 @@
       "review": 56,
       "liked": 13,
       "sale": -46.7,
-      "sale_price": "216.750",
+      "sale_price": 216,
       "variants": []
     },
     {
@@ -244,12 +242,12 @@
         "/img/ListItem/ListItem10b.png",
         "/img/ListItem/ListItem10c.png"
       ],
-      "price": "28.000 - 58.600",
+      "price": "36.800",
       "sold": "4.3k",
       "review": 845,
       "liked": 117,
       "sale": -24,
-      "sale_price": "36.800 - 58.600",
+      "sale_price": 28,
       "variants": [
         {
           "id": 1,
@@ -276,7 +274,7 @@
       "review": 1109,
       "liked": 135,
       "sale": -36,
-      "sale_price": "140.000",
+      "sale_price": 140,
       "variants": [
         {
           "id": 1,
@@ -314,7 +312,7 @@
       "review": 1745,
       "liked": 337,
       "sale": -40,
-      "sale_price": "119.000",
+      "sale_price": 119,
       "variants": [
         {
           "id": 1,
@@ -326,6 +324,703 @@
               "variant_option_id": 3,
               "variant_option_name": "BALO ĐEN + BÒ SỮA"
             }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Set Bộ Đồ Nữ",
+      "images": [
+        "/img/search1.png",
+        "/img/ListItem/ListItem1b.png",
+        "/img/ListItem/ListItem1c.png"
+      ],
+      "price": "220.000",
+      "sold": "1700",
+      "review": 125,
+      "liked": 64,
+      "sale": -10,
+      "sale_price": 198,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu Sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đỏ" },
+            { "variant_option_id": 2, "variant_option_name": "Xanh Lá" },
+            { "variant_option_id": 3, "variant_option_name": "Xanh Dương" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "S" },
+            { "variant_option_id": 20, "variant_option_name": "M" },
+            { "variant_option_id": 30, "variant_option_name": "L" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Mĩ Phẩm Some By Mi",
+      "images": [
+        "/img/search2.png",
+        "/img/ListItem/ListItem2b.png",
+        "/img/ListItem/ListItem2c.png"
+      ],
+      "price": "480.000",
+      "sold": "320",
+      "review": 87,
+      "liked": 39,
+      "sale": -15,
+      "sale_price": 408,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Loại",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Toner" },
+            { "variant_option_id": 2, "variant_option_name": "Serum" },
+            { "variant_option_id": 3, "variant_option_name": "Cream" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Áo Babydoll Nữ Tay Bèo",
+      "images": [
+        "/img/search3.png",
+        "/img/ListItem/ListItem3b.png",
+        "/img/ListItem/ListItem3c.png"
+      ],
+      "price": "175.000",
+      "sold": "1200",
+      "review": 284,
+      "liked": 127,
+      "sale": -20,
+      "sale_price": 140,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Trắng" },
+            { "variant_option_id": 2, "variant_option_name": "Hồng" },
+            { "variant_option_id": 3, "variant_option_name": "Be" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "M" },
+            { "variant_option_id": 20, "variant_option_name": "L" },
+            { "variant_option_id": 30, "variant_option_name": "XL" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Serum Giảm Mụn The Ordinary Niacinamide",
+      "images": [
+        "/img/search4.png",
+        "/img/ListItem/ListItem13b.png",
+        "/img/ListItem/ListItem13c.png"
+      ],
+      "price": "310.000",
+      "sold": "890",
+      "review": 413,
+      "liked": 201,
+      "sale": -20,
+      "sale_price": 248,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Dung tích",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "30ml" },
+            { "variant_option_id": 2, "variant_option_name": "60ml" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Bút Mực Muji",
+      "images": [
+        "/img/search5.png",
+        "/img/ListItem/ListItem14b.png",
+        "/img/ListItem/ListItem14c.png"
+      ],
+      "price": "19.000",
+      "sold": "390",
+      "review": 22,
+      "liked": 17,
+      "sale": -5,
+      "sale_price": 18,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu mực",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng" },
+            { "variant_option_id": 3, "variant_option_name": "Đỏ" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Áo Trễ Vai Tay Phồng",
+      "images": [
+        "/img/search6.png",
+        "/img/ListItem/ListItem15b.png",
+        "/img/ListItem/ListItem15c.png"
+      ],
+      "price": "245.000",
+      "sold": "650",
+      "review": 158,
+      "liked": 75,
+      "sale": -12,
+      "sale_price": 215,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Trắng" },
+            { "variant_option_id": 2, "variant_option_name": "Xanh Bơ" },
+            { "variant_option_id": 3, "variant_option_name": "Hồng Đào" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "M" },
+            { "variant_option_id": 20, "variant_option_name": "L" },
+            { "variant_option_id": 30, "variant_option_name": "XL" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Bộ Chăn Ga Gối Cotton",
+      "images": [
+        "/img/search7.png",
+        "/img/ListItem/ListItem16b.png",
+        "/img/ListItem/ListItem16c.png"
+      ],
+      "price": "720.000",
+      "sold": "550",
+      "review": 204,
+      "liked": 92,
+      "sale": -18,
+      "sale_price": 590,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Kích cỡ giường",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "1m6" },
+            { "variant_option_id": 2, "variant_option_name": "1m8" },
+            { "variant_option_id": 3, "variant_option_name": "2m" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "Xám" },
+            { "variant_option_id": 20, "variant_option_name": "Xanh Dương" },
+            { "variant_option_id": 30, "variant_option_name": "Hồng" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Kẹp Tóc Nơ",
+      "images": [
+        "/img/search8.png",
+        "/img/ListItem/ListItem17b.png",
+        "/img/ListItem/ListItem17c.png"
+      ],
+      "price": "15.000",
+      "sold": "1680",
+      "review": 35,
+      "liked": 22,
+      "sale": -35,
+      "sale_price": 10,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Nâu" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng" },
+            { "variant_option_id": 3, "variant_option_name": "Hồng" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Giấy Ăn Gấu Trúc Sipiao",
+      "images": [
+        "/img/search9.png",
+        "/img/ListItem/ListItem18b.png",
+        "/img/ListItem/ListItem18c.png"
+      ],
+      "price": "120.000",
+      "sold": "3000",
+      "review": 492,
+      "liked": 217,
+      "sale": -14.2,
+      "sale_price": 102,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Loại gói",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "10 gói" },
+            { "variant_option_id": 2, "variant_option_name": "20 gói" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Sáp Thơm",
+      "images": [
+        "/img/search10.png",
+        "/img/ListItem/ListItem19b.png",
+        "/img/ListItem/ListItem19c.png"
+      ],
+      "price": "85.000",
+      "sold": "2000",
+      "review": 148,
+      "liked": 62,
+      "sale": -16,
+      "sale_price": 71,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Hương thơm",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Oải Hương" },
+            { "variant_option_id": 2, "variant_option_name": "Hoa Nhài" },
+            { "variant_option_id": 3, "variant_option_name": "Gỗ Tuyết Tùng" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Bút Mực Gel",
+      "images": [
+        "/img/search11.png",
+        "/img/ListItem/ListItem20b.png",
+        "/img/ListItem/ListItem20c.png"
+      ],
+      "price": "21.000",
+      "sold": "940",
+      "review": 188,
+      "liked": 93,
+      "sale": -8,
+      "sale_price": 19,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu mực",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Xanh" },
+            { "variant_option_id": 2, "variant_option_name": "Đen" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Váy Trắng Nữ Form Body",
+      "images": [
+        "/img/search12.png",
+        "/img/ListItem/ListItem21b.png",
+        "/img/ListItem/ListItem21c.png"
+      ],
+      "price": "390.000",
+      "sold": "480",
+      "review": 221,
+      "liked": 107,
+      "sale": -11,
+      "sale_price": 347,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "S" },
+            { "variant_option_id": 2, "variant_option_name": "M" },
+            { "variant_option_id": 3, "variant_option_name": "L" },
+            { "variant_option_id": 4, "variant_option_name": "XL" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Áo Thun Unisex Nam Nữ",
+      "images": [
+        "/img/sale1.png",
+        "/img/ListItem/ListItem25b.png",
+        "/img/ListItem/ListItem25c.png"
+      ],
+      "price": "174.400",
+      "sale": -14,
+      "sold": "500",
+      "review": 84,
+      "liked": 42,
+      "sale_price": 150,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng" },
+            { "variant_option_id": 3, "variant_option_name": "Kem" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Kích cỡ (Size)",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "M" },
+            { "variant_option_id": 20, "variant_option_name": "L" },
+            { "variant_option_id": 30, "variant_option_name": "XL" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Váy Trắng Oversize Nữ",
+      "images": [
+        "/img/sale2.png",
+        "/img/ListItem/ListItem26b.png",
+        "/img/ListItem/ListItem26c.png"
+      ],
+      "price": "320.500",
+      "sale": -22,
+      "sale_price": 250,
+      "sold": "350",
+      "review": 67,
+      "liked": 31,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng" },
+            { "variant_option_id": 3, "variant_option_name": "Kem" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Size",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "S" },
+            { "variant_option_id": 20, "variant_option_name": "M" },
+            { "variant_option_id": 30, "variant_option_name": "L" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Quạt Cầm Tay",
+      "images": [
+        "/img/sale3.png",
+        "/img/ListItem/ListItem27b.png",
+        "/img/ListItem/ListItem27c.png"
+      ],
+      "price": "616.700",
+      "sale": -40,
+      "sale_price": 370,
+      "sold": "1k2",
+      "review": 105,
+      "liked": 56,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Trắng" },
+            { "variant_option_id": 2, "variant_option_name": "Xanh Dương" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Quần Ống Rộng Nữ ",
+      "images": [
+        "/img/sale4.png",
+        "/img/ListItem/ListItem28b.png",
+        "/img/ListItem/ListItem28c.png"
+      ],
+      "price": "302.600",
+      "sale": -24,
+      "sale_price": 230,
+      "sold": "180",
+      "review": 49,
+      "liked": 23,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng" },
+            { "variant_option_id": 3, "variant_option_name": "Xanh lá" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Kích cỡ (Size)",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "S" },
+            { "variant_option_id": 20, "variant_option_name": "M" },
+            { "variant_option_id": 30, "variant_option_name": "L" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Chiếu Tre",
+      "images": [
+        "/img/sale5.png",
+        "/img/ListItem/ListItem29b.png",
+        "/img/ListItem/ListItem29c.png"
+      ],
+      "price": "228.600",
+      "sale": -30,
+      "sale_price": 160,
+      "sold": "590",
+      "review": 73,
+      "liked": 38,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Kích thước",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "1m6" },
+            { "variant_option_id": 2, "variant_option_name": "1m8" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Ô Cao Cấp Chống Thấm Tốt",
+      "images": [
+        "/img/sale6.png",
+        "/img/ListItem/ListItem30b.png",
+        "/img/ListItem/ListItem30c.png"
+      ],
+      "price": "186.700",
+      "sale": -25,
+      "sale_price": 140,
+      "sold": "1k8",
+      "review": 98,
+      "liked": 45,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Loại cán",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Cán cong" },
+            { "variant_option_id": 2, "variant_option_name": "Cán thẳng" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Nước Giặt Omo ",
+      "images": [
+        "/img/sale7.png",
+        "/img/ListItem/ListItem31b.png",
+        "/img/ListItem/ListItem31c.png"
+      ],
+      "price": "182.900",
+      "sale": -18,
+      "sale_price": 150,
+      "sold": "3k",
+      "review": 135,
+      "liked": 62,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Dung tích",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "3.8L" },
+            { "variant_option_id": 2, "variant_option_name": "5L" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Áo Ngực Không Gọng ",
+      "images": [
+        "/img/sale8.png",
+        "/img/ListItem/ListItem32b.png",
+        "/img/ListItem/ListItem32c.png"
+      ],
+      "price": "209.230",
+      "sale": -35,
+      "sale_price": 136,
+      "sold": "800",
+      "review": 92,
+      "liked": 40,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng" },
+            { "variant_option_id": 2, "variant_option_name": "Hồng" }
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Kích cỡ (Size)",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "S" },
+            { "variant_option_id": 20, "variant_option_name": "M" },
+            { "variant_option_id": 30, "variant_option_name": "L" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Áo Thun Polo Tay Ngắn Nam",
+      "images": [
+        "/img/sale9.png",
+        "/img/ListItem/ListItem33b.png",
+        "/img/ListItem/ListItem33c.png"
+      ],
+      "price": "260.274",
+      "sale": -27,
+      "sale_price": 190,
+      "sold": "1k1",
+      "review": 112,
+      "liked": 52,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đen sọc trắng" },
+            { "variant_option_id": 2, "variant_option_name": "Trắng sọc đen" }
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Kích cỡ (Size)",
+          "options": [
+            { "variant_option_id": 10, "variant_option_name": "M" },
+            { "variant_option_id": 20, "variant_option_name": "L" },
+            { "variant_option_id": 30, "variant_option_name": "XL" },
+            { "variant_option_id": 40, "variant_option_name": "XXL" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Dầu Gội Thảo Dược Nguyên Xuân",
+      "images": [
+        "/img/sale10.png",
+        "/img/ListItem/ListItem34b.png",
+        "/img/ListItem/ListItem34c.png"
+      ],
+      "price": "198.182",
+      "sale": -45,
+      "sale_price": 109,
+      "sold": "5k",
+      "review": 223,
+      "liked": 97,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Phân loại",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đỏ" },
+            { "variant_option_id": 2, "variant_option_name": "Xanh" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Xịt Thơm Phòng Dove Vị Chanh",
+      "images": [
+        "/img/sale11.png",
+        "/img/ListItem/ListItem35b.png",
+        "/img/ListItem/ListItem35c.png"
+      ],
+      "price": "166.667",
+      "sale": -34,
+      "sale_price": 110,
+      "sold": "3k8",
+      "review": 119,
+      "liked": 55,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Dung tích",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "200ml" },
+            { "variant_option_id": 2, "variant_option_name": "300ml" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Son Kem Lì Mịn Môi Romand",
+      "images": [
+        "/img/sale12.png",
+        "/img/ListItem/ListItem36b.png",
+        "/img/ListItem/ListItem36c.png"
+      ],
+      "price": "239.400",
+      "sale": -29,
+      "sale_price": 170,
+      "sold": "520",
+      "review": 81,
+      "liked": 38,
+      "variants": [
+        {
+          "id": 1,
+          "title": "Màu sắc",
+          "options": [
+            { "variant_option_id": 1, "variant_option_name": "Đỏ gạch" },
+            { "variant_option_id": 2, "variant_option_name": "Hồng đất" },
+            { "variant_option_id": 3, "variant_option_name": "Cam san hô" }
           ]
         }
       ]

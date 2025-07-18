@@ -17,14 +17,13 @@ const LoginInput = () => {
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+    setIsValid(password.length > 0 && e.target.value.length > 0);
   };
 
   const handlePassWord = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
-    if (password.length !== 0) {
-      setIsValid(!isValid);
-    }
-    setIsValid(false);
+
+    setIsValid(email.length > 0 && e.target.value.length > 0);
   };
 
   const toggleClick = (e: React.MouseEvent) => {

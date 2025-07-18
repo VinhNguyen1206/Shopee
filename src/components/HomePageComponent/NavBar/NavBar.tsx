@@ -1,7 +1,17 @@
 import styles from "../../../sass/HomePage/_NavBar.module.scss";
 import { Link } from "react-router-dom";
 import { navs, nav2s, suggests } from "./NavBarConstants";
+import Cart from "../../../pages/Cart";
+import { useState } from "react";
+import { useAppSelector } from "../../../redux/hooks";
+import { SelectItem } from "../../../redux/productSlice";
 function NavBar() {
+  const [visible, setVisible] = useState<boolean>(false);
+  const handleVisible = () => {
+    setVisible(!visible);
+  };
+
+  const ItemCount = useAppSelector(SelectItem);
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarNav}>
@@ -160,10 +170,22 @@ function NavBar() {
             ))}
           </div>
         </div>
-        <div className={styles.navbarMainCart}>
-          <Link className={styles.navbarMainCartLogo} to="/cart">
+        <div onClick={handleVisible} className={styles.navbarMainCart}>
+          <div className={styles.navbarMainCartLogo}>
             <i className="fa-solid fa-cart-shopping"></i>
-          </Link>
+          </div>
+          {ItemCount > 0 && (
+            <span className={styles.navbarMainCartCount}>{ItemCount}</span>
+          )}
+        </div>
+        {/* {visible ? <Cart handleVisible={handleVisible} /> : <div></div>}
+         */}
+        <div
+          className={`${styles.navbarMainCartWrapper} ${
+            visible && styles.open
+          }`}
+        >
+          {visible && <Cart handleVisible={handleVisible} />}
         </div>
       </div>
     </nav>
