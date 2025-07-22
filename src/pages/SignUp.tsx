@@ -11,7 +11,7 @@ function SignUp() {
         <div className={styles.containerImg}>
           <div className={styles.containerContent}>
             <div></div>
-            <SignUpForm />
+            <SignUpForm path="/login" />
           </div>
         </div>
       </div>

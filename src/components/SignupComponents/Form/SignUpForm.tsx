@@ -5,15 +5,17 @@ import More from "../../../common/More";
 
 type SignUpProps = {
   link?: To;
+  path: string;
 };
-function SignUpForm({ link = "/login" }: SignUpProps) {
+
+function SignUpForm({ link = "/login", path }: SignUpProps) {
   return (
     <div className={styles.form}>
       <div className={styles.formHeader}>
         <div className={styles.formHeaderTitle}>Đăng Ký</div>
       </div>
       <div className={styles.formMain}>
-        <InputForm />
+        <InputForm path={path} />
         <div className={styles.formMainMid}>
           <More />
           <div className={styles.formMainMidSecurity}>

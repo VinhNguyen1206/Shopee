@@ -10,10 +10,10 @@
     }
   }
   &List {
-    @include scrollbar;
     &Top,
     &Bot {
       display: flex;
+      flex-direction: row;
     }
     &Item {
       width: 125px;
@@ -43,4 +43,7 @@
       }
     }
   }
+}
+.scrollContainer {
+  @include scrollContainer;
 }

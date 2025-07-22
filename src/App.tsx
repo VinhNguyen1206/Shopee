@@ -15,6 +15,7 @@ import Homepage from "./pages/Homepage";
 import Product from "./pages/Product/Product";
 import Cart from "./pages/Cart";
 import SellerForgetPassword from "./components/SellerComponent/SellerForgetPassword";
+const handleVisible = () => {};
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
       <Route path="/sellerlogin/otp" element={<SellerLoginOtp />} />
       <Route path="/sellerforgetpassword" element={<SellerForgetPassword />} />
       <Route path="/product/:slug" element={<Product />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/cart" element={<Cart handleVisible={handleVisible} />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

@@ -6,11 +6,13 @@ import type { CartProduct, ChooseVariants, Products } from "../../types/types";
 import "../../products.json";
 import ReportForm from "../../components/Product/ReportForm";
 import SecurityForm from "../../components/Product/SecurityForm";
-import { data, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { mySlug } from "../../utils/Slug";
 import Clock from "../../components/HomePageComponent/Clock/Clock";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { addToCart } from "../../redux/productSlice";
+import type { RootState } from "../../redux/store";
+
 const Product = () => {
   const { slug } = useParams();
   const dispatch = useAppDispatch();
@@ -23,6 +25,9 @@ const Product = () => {
   const [showVariantWarning, setShowVariantWarning] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [hoverImage, setHoverImage] = useState<string | null>(null);
+  const products = useAppSelector(
+    (state: RootState) => state.products.products
+  );
 
   // fetching jsonfile
   useEffect(() => {
@@ -47,8 +52,7 @@ const Product = () => {
     (variant) => selectedVariants[variant.id] !== undefined
   );
 
-  // console.log(allVariantsSelected);
-
+  //onclick for toggle show report
   const handleVisible = () => {
     console.log("Toggle checked");
     setVisible(!visible);
@@ -123,6 +127,9 @@ const Product = () => {
       chooseVariants,
     };
     dispatch(addToCart(selectedProduct));
+    setTimeout(() => {
+      console.log(products);
+    }, 1000);
     setShowVariantWarning(false);
   };
 

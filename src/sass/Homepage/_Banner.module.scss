@@ -1,8 +1,7 @@
 @use "../common/index.module" as *;
 .banner {
-  max-width: 65vw;
+  @include bg;
   padding-top: 160px;
-  margin: 0 auto;
   &Img {
     display: flex;
     &Cover {
@@ -11,8 +10,7 @@
       &:hover &Btn2 {
         opacity: 0.7;
       }
-      &Btn1,
-      &Btn2 {
+      &Btn1 {
         background-color: rgba($color: $text-color, $alpha: 0.9);
         height: 60px;
         width: 35px;
@@ -22,19 +20,17 @@
         color: $bg-color;
         opacity: 0;
         transition: 0.3s;
-        // z-index: 2;
         top: 35%;
-      }
-      &Btn1 {
         left: 0;
       }
       &Btn2 {
-        right: 0;
+        @extend .bannerImgCoverBtn1;
+        left: 94%;
       }
     }
     &Big {
       height: 235px;
-      width: 830px;
+      width: 42vw;
     }
     &Small {
       padding-left: 3px;
@@ -44,21 +40,26 @@
       &Top,
       &Bot {
         height: 115px;
-        width: 415px;
+        width: 23vw;
       }
     }
   }
   &Choice {
     display: flex;
+    margin-bottom: 10px;
     &Link {
       text-decoration: none;
       color: $text-color;
     }
     &Item {
-      width: 150px;
+      width: 8vw;
       margin: 15px 30px 0;
       text-align: center;
       transition: transform 0.1s ease-in-out;
+      @media (max-width: $breakpoint-desktop) {
+        margin: 10px 20px 0;
+        width: 6.8vw;
+      }
       &:hover,
       &:focus {
         transform: translate(0, -2px);
@@ -70,6 +71,39 @@
       &Desc {
         font-size: 1.3rem;
         font-weight: 350;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    &Img {
+      flex-direction: column;
+      &Big {
+        width: 70vw;
+      }
+      &Small {
+        display: flex;
+        padding: 0;
+        &Top,
+        &Bot {
+          width: 35vw;
+        }
+      }
+      &Cover {
+        &Btn2 {
+          left: 100%;
+        }
+      }
+    }
+    &Choice {
+      &Link {
+        width: 100px;
+      }
+      &Item {
+        margin: 5px 12px 0;
+        width: 2vw;
+        &Desc {
+          font-size: 1rem;
+        }
       }
     }
   }

@@ -8,8 +8,6 @@
   &Group {
     position: relative;
     height: 305px;
-    padding-right: 2px;
-    padding-left: 1px;
 
     &:hover .listLinkFooter {
       visibility: visible;
@@ -24,7 +22,6 @@
   &Link {
     text-decoration: none;
     width: 205px;
-    // height: 305px;
     position: relative;
     transition: transform 0.3s ease-in-out;
     z-index: 0;

@@ -13,7 +13,6 @@ function Clock() {
   useEffect(() => {
     const clock = setInterval(() => {
       const now = new Date();
-
       const newTime = formatDate(now);
       setTime(newTime);
     }, 1000);

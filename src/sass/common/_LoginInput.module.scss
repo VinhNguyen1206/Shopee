@@ -3,7 +3,7 @@
   padding: 0 30px 20px;
   &Account {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     height: 40px;
     padding: 12px;
   }
@@ -21,6 +21,16 @@
       top: 15px;
       border: none;
       background-color: #fff;
+    }
+    &Note {
+      padding: 5px;
+      margin-bottom: 10px;
+      color: red;
+      border: 1px solid red;
+      background-color: #fff6f7;
+      &:focus {
+        outline-width: 0;
+      }
     }
   }
   &Btn {

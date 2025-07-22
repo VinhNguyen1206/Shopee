@@ -7,8 +7,10 @@
   height: 600px;
   max-width: 58vw;
   margin: 0 auto;
-  @include dlfex;
+  @include dflex;
   justify-content: space-around;
+  @media (max-width: $breakpoint-tablet) {
+  }
   &Left {
     margin: 30px 100px 0 0;
     color: $primary-color;
@@ -51,5 +53,46 @@
         background-size: 3780.5555555555557% 1219.642857142857%;
       }
     }
+  }
+  @media (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+    height: 300px;
+    min-width: 75vw;
+    flex-direction: column;
+    &Left {
+      margin: 10px 30px 0 0;
+      &Title {
+        font-size: 1.2rem;
+      }
+      &Name {
+        font-size: 1.6rem;
+      }
+      &Item {
+        &1,
+        &2,
+        &3 {
+          margin-top: 15px;
+        }
+        &1Img1,
+        &3Img3 {
+          height: 20px;
+          width: 35px;
+        }
+        &2Img2 {
+          width: 30px;
+        }
+
+        &1Content1,
+        &2Content2,
+        &3Content3 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+.wrapper {
+  @media (max-width: $breakpoint-tablet) {
+    display: flex;
+    flex-direction: column;
   }
 }

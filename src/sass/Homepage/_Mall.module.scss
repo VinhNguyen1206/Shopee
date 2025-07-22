@@ -12,7 +12,6 @@
         text-decoration: none;
         color: $mall-color;
         width: 110px;
-        // font-weight: 400;
       }
       &Event {
         display: flex;
@@ -26,6 +25,9 @@
         }
         &Desc {
           font-weight: 350;
+          @media (max-width: $breakpoint-tablet) {
+            font-size: 1.1rem;
+          }
         }
       }
     }
@@ -35,18 +37,17 @@
   }
   &Bot {
     display: flex;
-    &Link {
-    }
     &Img {
       padding: 10px 0 0 15px;
     }
     &List {
       margin-bottom: -10px;
       position: relative;
-      @include scrollbar;
+      overflow-x: auto;
       &Top,
       &Bottom {
         display: flex;
+        align-items: center;
       }
       &Item {
         height: 236px;
@@ -73,12 +74,60 @@
       }
       &Btn {
         @include mallBtn;
-        position: absolute;
-        z-index: 1;
-        right: -97.5%;
-        top: 70%;
+        margin-left: 50px;
+        flex-shrink: 0;
         font-size: 1.6rem;
       }
     }
   }
+  @media (max-width: $breakpoint-desktop) {
+    &Top {
+      &Title {
+        &Name {
+          font-size: 1.4rem;
+        }
+        &Event {
+          &Desc {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      &Btn {
+        @include dflex;
+      }
+    }
+    &Bot {
+      &Img {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    &Top {
+      &Title {
+        &Name {
+          font-size: 1.2rem;
+        }
+        &Event {
+          &Item {
+            margin-right: 5px;
+          }
+          &Desc {
+            font-size: 1rem;
+          }
+        }
+      }
+      &Btn {
+        @include dflex;
+      }
+    }
+    &Bot {
+      &Img {
+        display: none;
+      }
+    }
+  }
+}
+.scrollContainer {
+  @include scrollContainer;
 }

@@ -37,4 +37,8 @@
       }
     }
   }
+  @media (max-width: $breakpoint-tablet) {
+    width: 400px;
+    right: 5%;
+  }
 }

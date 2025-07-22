@@ -11,12 +11,15 @@
       @include dflex;
       &Icon {
         padding: 6px 12px 0 10px;
+        @media (max-width: $breakpoint-tablet) {
+          height: 30px;
+        }
       }
     }
   }
   &List {
     display: flex;
-    @include scrollbar;
+    flex-direction: row;
     &Item {
       width: 200px;
       height: 250px;
@@ -58,4 +61,8 @@
       }
     }
   }
+}
+.scrollContainer {
+  @include scrollContainer;
+  flex-direction: row;
 }

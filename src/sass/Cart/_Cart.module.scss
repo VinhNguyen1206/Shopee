@@ -2,14 +2,15 @@
 .cart {
   display: flex;
   flex-direction: column;
-  height: 850px;
-  width: 550px;
+  height: 800px;
+  width: 32vw;
   position: relative;
-  right: 150px;
+  right: 280px;
   bottom: -50px;
   z-index: 100;
   background-color: #fff;
   border: 1px solid rgba($color: #000000, $alpha: 0.4);
+  border-radius: 3px;
   overflow: hidden;
   &Header {
     @include dflex;
@@ -34,9 +35,8 @@
     }
   }
   &Cover {
-    display: flex;
+    @include dflex;
     justify-content: space-between;
-    align-items: center;
     margin: 10px 0 30px;
     &Btn {
     }
@@ -59,6 +59,7 @@
       width: 100%;
       height: 500px;
       background-repeat: no-repeat;
+      background-size: contain;
     }
   }
   &List {
@@ -72,10 +73,10 @@
     display: flex;
     &Info {
       margin: 0 15px;
-      // width: 200px;
       @include dflex;
       flex-direction: column;
       align-items: start;
+      text-wrap: wrap;
     }
     &Img {
       height: 100px;
@@ -99,8 +100,7 @@
   }
   &Btn {
     padding: 0 5px;
-    display: flex;
-    align-items: center;
+    @include dflex;
     justify-content: space-around;
     &Click {
       @extend .cartHeaderBtn;
@@ -136,6 +136,272 @@
       background-color: $text-color;
       &:hover {
         background-color: rgba($color: $text-color, $alpha: 0.6);
+      }
+    }
+  }
+  @media (max-width: $breakpoint-laptop) {
+    height: 780px;
+    width: 45vw;
+    right: 420px;
+    &Header {
+      &Title {
+        font-size: 2rem;
+      }
+      &Btn {
+        width: 50px;
+        height: 27px;
+        font-size: 2rem;
+      }
+    }
+    &Empty {
+      padding: 5px;
+      padding-top: 90px;
+
+      @include dflex;
+      flex-direction: column;
+      &Title {
+        font-size: 3rem;
+        padding-bottom: 25px;
+      }
+      &Content {
+        font-size: 2rem;
+      }
+      &Img {
+        background-image: url("/img/Cart/CartEmpty.png");
+        // background-position: center;
+        margin-top: 15px;
+        width: 100%;
+        height: 430px;
+        background-repeat: no-repeat;
+      }
+    }
+    &List {
+      padding-bottom: 15px;
+    }
+    &Item {
+      padding: 8px;
+      &Info {
+        margin: 0 12px;
+      }
+      &Img {
+        height: 80px;
+        width: 80px;
+      }
+      &Name {
+        font-size: 1.4rem;
+      }
+      &Variant,
+      &Price {
+        font-size: 1.4rem;
+      }
+      &Total {
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 1.4rem;
+      }
+    }
+    &Btn {
+      &Quantity {
+        font-size: 1.6rem;
+        padding: 0 8px;
+      }
+      &Remove {
+        margin-left: 12px;
+      }
+    }
+    &Footer {
+      padding: 17px 13px;
+      &Buy {
+        font-size: 1.6rem;
+        width: 85px;
+      }
+      &Clear {
+      }
+    }
+  }
+  @media (max-width: $breakpoint-desktop) {
+    height: 700px;
+    width: 40vw;
+    right: 320px;
+    &Header {
+      &Title {
+        font-size: 1.7rem;
+      }
+      &Btn {
+        width: 42px;
+        height: 22px;
+        font-size: 1.8rem;
+      }
+    }
+    &Cover {
+      flex-direction: column;
+      align-items: start;
+      margin-left: 7px;
+      &Btn {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &Empty {
+      padding-top: 70px;
+      @include dflex;
+      flex-direction: column;
+      &Title {
+        font-size: 2.5rem;
+        padding-bottom: 20px;
+      }
+      &Content {
+        font-size: 1.8rem;
+      }
+      &Img {
+        background-image: url("/img/Cart/CartEmpty.png");
+        background-position: center;
+        margin-top: 55px;
+        width: 100%;
+        height: 300px;
+        background-repeat: no-repeat;
+      }
+    }
+    &List {
+      padding-bottom: 10px;
+    }
+    &Item {
+      padding: 5px;
+      &Info {
+        margin: 0 7px;
+      }
+      &Img {
+        height: 70px;
+        width: 70px;
+      }
+      &Name {
+        font-size: 1.4rem;
+      }
+      &Variant,
+      &Price {
+        font-size: 1.4rem;
+      }
+      &Total {
+        margin-top: 6px;
+        margin-right: 9px;
+        font-size: 1.3rem;
+      }
+    }
+    &Btn {
+      &Quantity {
+        font-size: 1.4rem;
+        padding: 0 4px;
+      }
+      &Remove {
+        margin-left: 6px;
+      }
+    }
+    &Footer {
+      padding: 12px 10px;
+      &Total {
+        font-size: 1.3rem;
+        width: 13vw;
+        white-space: nowrap;
+        text-wrap: wrap;
+      }
+      &Buy {
+        font-size: 1.3rem;
+        width: 65px;
+      }
+      &Clear {
+      }
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    height: 570px;
+    width: 45vw;
+    right: 230px;
+    &Header {
+      &Title {
+        font-size: 1.5rem;
+      }
+      &Btn {
+        width: 50px;
+        height: 25px;
+        font-size: 1.6rem;
+      }
+    }
+    &Cover {
+      flex-direction: column;
+      align-items: start;
+      margin-left: 4px;
+      &Btn {
+        display: flex;
+      }
+    }
+    &Empty {
+      padding-top: 100px;
+      @include dflex;
+      flex-direction: column;
+      &Title {
+        font-size: 2.2rem;
+        padding-bottom: 20px;
+      }
+      &Content {
+        font-size: 1.6rem;
+      }
+      &Img {
+        background-image: url("/img/Cart/CartEmpty.png");
+        background-position: center;
+        margin-top: 35px;
+        width: 100%;
+        height: 300px;
+        background-repeat: no-repeat;
+      }
+    }
+    &List {
+      padding-bottom: 7px;
+    }
+    &Item {
+      padding: 3px;
+      &Info {
+        margin: 0 5px;
+      }
+      &Img {
+        height: 70px;
+        width: 70px;
+      }
+      &Name {
+        font-size: 1.2rem;
+      }
+      &Variant,
+      &Price {
+        font-size: 1.2rem;
+      }
+      &Total {
+        margin-top: 5px;
+        margin-right: 7px;
+        font-size: 1.2rem;
+      }
+    }
+    &Btn {
+      margin: 7px 2px;
+      &Quantity {
+        font-size: 1.4rem;
+        padding: 0 7px;
+      }
+      &Remove {
+        margin-left: 15px;
+      }
+    }
+    &Footer {
+      padding: 10px 8px;
+      &Total {
+        font-size: 1.2rem;
+        width: 11vw;
+        white-space: nowrap;
+        text-wrap: wrap;
+      }
+      &Buy {
+        font-size: 1.1rem;
+        width: 55px;
+      }
+      &Clear {
       }
     }
   }

@@ -6,10 +6,13 @@
 .navbar {
   background-image: linear-gradient($primary-color, #ff7337);
   height: 120px;
-  padding: 0 300px 0 300px;
   width: 100%;
   position: fixed;
   z-index: 2;
+  &Container {
+    width: 65vw;
+    margin: 0 auto;
+  }
   &Nav {
     padding: 5px 0;
     height: 35px;
@@ -179,20 +182,26 @@
   }
   &Main {
     display: flex;
+    margin: 0 auto;
+    white-space: nowrap;
     padding: 16px 0 10px;
     &Icon {
       padding: 0 50px 0 30px;
       color: $bg-color;
+      &Logo {
+        height: 50px;
+        width: 150px;
+      }
     }
     &Search {
-      width: 860px;
+      min-width: 45vw;
       margin-right: 30px;
       &Item {
         position: relative;
         &Input {
           padding-left: 5px;
           height: 40px;
-          width: 860px;
+          min-width: 45vw;
         }
         &Btn {
           color: $bg-color;
@@ -229,7 +238,7 @@
       &Logo {
         position: absolute;
         height: 80px;
-        width: 50px;
+        min-width: 50px;
         color: $bg-color;
         right: 0;
         top: 15px;
@@ -251,6 +260,230 @@
         transition: opacity 0.3s ease, transform 0.3s ease;
         &.open {
           animation: fadeSlideIn 0.4s ease forwards;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-laptop) {
+    &Container {
+      width: 80vw;
+      margin: 0 auto;
+    }
+    &Nav {
+      height: 30px;
+      &Left {
+        margin-left: 17px;
+        &Link {
+          &Item {
+            margin-top: 8px;
+            font-size: 1.3rem;
+          }
+        }
+        &Icon {
+        }
+      }
+      &Right {
+        &Support {
+          &Select {
+            font-size: 1.3rem;
+            margin-right: 12px;
+          }
+        }
+        &Sign {
+          height: 15px;
+          &Up {
+            padding: 0 12px;
+          }
+          &Up,
+          &In {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    &Main {
+      &Icon {
+        padding: 0 40px 0 25px;
+        color: $bg-color;
+        &Logo {
+          height: 40px;
+          width: 135px;
+        }
+      }
+      &Search {
+        width: 50vw;
+        &Item {
+          &Input {
+            width: 50vw;
+          }
+        }
+        &Suggest {
+          width: 50vw;
+          &Things {
+            margin-right: 15px;
+            font-size: 1.15rem;
+            &:nth-child(8) {
+              display: none;
+            }
+          }
+        }
+      }
+      &Cart {
+        &Logo {
+          height: 70px;
+          width: 42px;
+          right: 10px;
+          font-size: 2.3rem;
+        }
+        &Count {
+          right: 23px;
+        }
+        &Wrapper {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-desktop) {
+    &Container {
+      width: 100vw;
+      margin: 0;
+    }
+    &Nav {
+      &Left {
+        margin-left: 0;
+        &Link {
+          &Item {
+            padding: 0 5px;
+            margin-top: 8px;
+            height: 12px;
+          }
+        }
+        &Icon {
+          margin-top: 3px;
+        }
+      }
+      &Right {
+        padding-top: 7px;
+        font-size: 1.15rem;
+        &Support {
+          &Select {
+            font-size: 1.15rem;
+            margin-right: 5px;
+          }
+        }
+        &Sign {
+          height: 13px;
+          &Up {
+            padding-right: 12px;
+          }
+          &Up,
+          &In {
+            font-size: 1.15rem;
+          }
+          &In {
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+    &Main {
+      &Icon {
+        padding: 0 30px 0 20px;
+      }
+      &Search {
+        width: 58vw;
+        margin-right: 20px;
+        &Item {
+          &Input {
+            width: 58vw;
+          }
+          &Btn {
+          }
+        }
+        &Suggest {
+          width: 55vw;
+          &Things {
+            margin-right: 10px;
+            font-size: 1.1rem;
+            &:nth-child(7) {
+              display: none;
+            }
+          }
+        }
+      }
+      &Cart {
+        &Count {
+          right: 23px;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    &Container {
+      width: 100vw;
+      margin: 0;
+    }
+    &Nav {
+      &Left {
+        margin-left: 0;
+        &Link {
+          &Item {
+            padding: 0 4px;
+            font-size: 1.05rem;
+          }
+        }
+      }
+      &Right {
+        padding-top: 6px;
+        &Support {
+          &Select {
+            font-size: 1.05rem;
+          }
+        }
+        &Sign {
+          &Up {
+            padding: 0 5px;
+          }
+          &Up,
+          &In {
+            font-size: 1.05rem;
+          }
+        }
+      }
+    }
+    &Main {
+      &Icon {
+        padding: 0 15px 0 10px;
+        &Logo {
+          display: none;
+        }
+      }
+      &Search {
+        width: 65vw;
+        &Item {
+          &Input {
+            width: 65vw;
+          }
+        }
+        &Suggest {
+          &Things {
+            margin-right: 5px;
+            font-size: 1.1rem;
+            &:nth-child(6) {
+              display: none;
+            }
+          }
+        }
+      }
+      &Cart {
+        padding: 40px;
+        &Logo {
+          width: 50px;
+        }
+        &Count {
+          right: 23px;
         }
       }
     }

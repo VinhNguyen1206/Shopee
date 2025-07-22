@@ -65,7 +65,7 @@
   }
   &Right {
     padding: 20px 35px 0;
-    width: 750px;
+    width: 70vw;
     &Title {
       &Tag {
         font-size: 1.4rem;
@@ -138,9 +138,8 @@
       margin-top: 10px;
       height: 32px;
       padding: 0 7px;
-      display: flex;
+      @include dflex;
       justify-content: space-between;
-      align-items: center;
       background-image: linear-gradient(to right, $primary-color, #ff7337);
       &Left {
         padding-top: 3px;
@@ -325,7 +324,7 @@
       margin-left: 20px;
       &Add {
         @include productbtn;
-        @include dlfex;
+        @include dflex;
         color: $primary-color;
         background-color: rgba(255, 87, 34, 0.1);
         &:hover {
@@ -344,6 +343,205 @@
         &:hover {
           background-color: rgba($color: $primary-color, $alpha: 0.8);
           cursor: pointer;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-laptop) {
+    max-width: 85vw;
+    padding-bottom: 120px;
+    &Left {
+      padding: 13px;
+      &Top {
+        &Photo {
+          width: 360px;
+          height: 360px;
+        }
+        &List {
+          &Img {
+            margin-right: 20px;
+            width: 108px;
+            height: 108px;
+          }
+        }
+      }
+    }
+    &Right {
+      padding: 15px 22px 0;
+      &Review {
+        width: 48vw;
+        justify-content: space-between;
+      }
+      &Flash,
+      &Price {
+        width: 48vw;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-desktop) {
+    max-width: 85vw;
+    padding-bottom: 120px;
+    &Left {
+      padding: 10px;
+      &Top {
+        margin-bottom: 40px;
+        &Photo {
+          width: 250px;
+          height: 250px;
+        }
+        &List {
+          &Img {
+            margin-right: 15px;
+            width: 75px;
+            height: 75px;
+          }
+        }
+      }
+      &Bot {
+        flex-direction: column;
+        align-items: center;
+        &Social {
+          border-bottom: 1px solid rgba($color: #333, $alpha: 0.15);
+          width: 80%;
+          padding-bottom: 45px;
+          border-right: none;
+          margin-bottom: 30px;
+          font-size: 2.5rem;
+        }
+      }
+    }
+    &Right {
+      width: 70vw;
+      padding: 10px 15px 0;
+      &Title {
+        width: 350px;
+        &Tag {
+          font-size: 1rem;
+          padding: 0 3px;
+        }
+        &Name {
+          font-size: 1.6rem;
+          width: 100%;
+          text-wrap: wrap;
+          text-overflow: ellipsis;
+        }
+      }
+      &Review {
+        width: 45vw;
+        justify-content: start;
+        font-size: 1.3rem;
+        &Left {
+          &Reviews {
+            &Content {
+              margin-left: 10px;
+            }
+          }
+          &Sold {
+            Content {
+            }
+          }
+        }
+        &Report {
+          margin-left: 20px;
+        }
+      }
+      &Flash {
+        width: 45vw;
+      }
+      &Price {
+        width: 45vw;
+      }
+      &Detail {
+        padding: 5px 10px;
+        &Security {
+          width: 45vw;
+        }
+        &Variant {
+          width: 350px;
+        }
+        &Quantity {
+          font-size: 1.3rem;
+        }
+      }
+      &Button {
+        &Add,
+        &Buy {
+          width: 170px;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 90vw;
+    padding-bottom: 50px;
+    flex-direction: column;
+    &Left {
+      padding: 6px;
+      position: relative;
+      &Top {
+        margin-top: 10px;
+        display: flex;
+        &Photo {
+          width: 220px;
+          height: 220px;
+        }
+        &List {
+          height: 140px;
+          padding: 5px;
+          padding-left: 55px;
+          flex-direction: column;
+          &Img {
+            width: 105px;
+            height: 105px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      &Bot {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 40vw;
+        &Social {
+          // border-right: 1px solid rgba($color: #333, $alpha: 0.15);
+          border-bottom: none;
+          height: 55px;
+          margin-bottom: 0;
+          padding-bottom: 25px;
+          flex-direction: column;
+          &Share {
+            font-size: 2.2rem;
+          }
+          &Media {
+            &Item {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+        &Like {
+          &Number {
+            font-size: 1.6rem;
+            width: 150px;
+          }
+        }
+      }
+    }
+    &Right {
+      &Review {
+        justify-content: start;
+        &Report {
+          margin-left: 70px;
+        }
+      }
+      &Flash,
+      &Price {
+        width: 75vw;
+      }
+      &Button {
+        &Add,
+        &Buy {
+          width: 240px;
         }
       }
     }

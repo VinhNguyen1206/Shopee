@@ -4,9 +4,13 @@ import {
   type PayloadAction,
 } from "@reduxjs/toolkit";
 import type { CartProduct, CartState } from "../types/types";
+import {
+  loadFromLocalStorage,
+  saveToLocalStorage,
+} from "../utils/ReduxStorage";
 
 const initialState: CartState = {
-  products: [],
+  products: loadFromLocalStorage("products") || [],
 };
 
 const productSlice = createSlice({
@@ -14,9 +18,20 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartProduct>) => {
-      const existProduct = state.products.find(
-        (product) => product.id === action.payload.id
-      );
+      console.log(action.payload);
+      const existProduct = state.products.find((product) => {
+        if (product.id !== action.payload.id) return false;
+        if (
+          product.chooseVariants.length !== action.payload.chooseVariants.length
+        )
+          return false;
+        return product.chooseVariants.every(
+          (variant, index) =>
+            variant.variant_id ===
+              action.payload.chooseVariants[index].variant_id &&
+            variant.option_id === action.payload.chooseVariants[index].option_id
+        );
+      });
       if (existProduct) {
         existProduct.quantity += action.payload.quantity;
       } else {
@@ -25,26 +40,64 @@ const productSlice = createSlice({
           quantity: action.payload.quantity,
         });
       }
+      console.log(state.products);
+      saveToLocalStorage({ state: state.products, key: "products" });
     },
     updateQuantity: (
       state,
-      action: PayloadAction<{ id: number; count: number }>
+      action: PayloadAction<{
+        id: number;
+        chooseVariants: CartProduct["chooseVariants"];
+        count: number;
+      }>
     ) => {
-      const item = state.products.find(
-        (product) => product.id === action.payload.id
-      );
+      const item = state.products.find((product) => {
+        if (product.id !== action.payload.id) return false;
+        if (
+          product.chooseVariants.length !== action.payload.chooseVariants.length
+        )
+          return false;
+        return product.chooseVariants.every((variant, index) => {
+          return (
+            variant.variant_id ===
+              action.payload.chooseVariants[index].variant_id &&
+            variant.option_id === action.payload.chooseVariants[index].option_id
+          );
+        });
+      });
       if (item) {
         item.quantity = Math.max(1, item.quantity + action.payload.count);
+        saveToLocalStorage({ state: state.products, key: "products" });
       }
     },
-    removeFromCart: (state, action: PayloadAction<number>) => {
-      state.products = state.products.filter(
-        (product) => product.id !== action.payload
-      );
+    removeFromCart: (
+      state,
+      action: PayloadAction<{
+        id: number;
+        chooseVariants: CartProduct["chooseVariants"];
+      }>
+    ) => {
+      state.products = state.products.filter((product) => {
+        if (product.id !== action.payload.id) return true;
+        if (
+          product.chooseVariants.length !== action.payload.chooseVariants.length
+        )
+          return true;
+        const removeItem = product.chooseVariants.every((variant, index) => {
+          return (
+            variant.variant_id ===
+              action.payload.chooseVariants[index].variant_id &&
+            variant.option_id === action.payload.chooseVariants[index].option_id
+          );
+        });
+        return !removeItem;
+      });
+      saveToLocalStorage({ state: state.products, key: "products" });
     },
     clearCart: (state) => {
       alert("Cart Has Been Cleared");
       state.products = [];
+      saveToLocalStorage({ state: state.products, key: "products" });
     },
     // buyItems: (state) => {
     //   alert(`Items Have Been Purchased`);
@@ -55,6 +108,7 @@ const productSlice = createSlice({
     builder.addCase(buyNewItems.fulfilled, (state) => {
       alert("Purchase Successfull");
       state.products = [];
+      saveToLocalStorage({ state: state.products, key: "products" });
     });
     // .addCase(buyNewItems.pending, (state) => {
     //   console.log("Purchasing items ...");

@@ -17,18 +17,27 @@ const Cart = ({ handleVisible }: { handleVisible: () => void }) => {
   const dispatch = useAppDispatch();
 
   // increase quantity in cart
-  const handleIncrease = (id: number) => {
-    dispatch(updateQuantity({ id, count: 1 }));
+  const handleIncrease = (
+    id: number,
+    chooseVariants: CartProduct["chooseVariants"]
+  ) => {
+    dispatch(updateQuantity({ id, chooseVariants, count: 1 }));
   };
 
   // decrease quantity in cart
-  const handleDecrease = (id: number) => {
-    dispatch(updateQuantity({ id, count: -1 }));
+  const handleDecrease = (
+    id: number,
+    chooseVariants: CartProduct["chooseVariants"]
+  ) => {
+    dispatch(updateQuantity({ id, chooseVariants, count: -1 }));
   };
 
   // remove items from cart
-  const handleRemove = (id: number) => {
-    dispatch(removeFromCart(id));
+  const handleRemove = (
+    id: number,
+    chooseVariants: CartProduct["chooseVariants"]
+  ) => {
+    dispatch(removeFromCart({ id, chooseVariants }));
   };
 
   // clear all items in cart
@@ -89,13 +98,16 @@ const Cart = ({ handleVisible }: { handleVisible: () => void }) => {
                     <div className={styles.cartItemInfo}>
                       <p className={styles.cartItemName}>{product.name}</p>
                       {product.chooseVariants.map((variant) => (
-                        <p key={variant.variant_id}>
+                        <p
+                          className={styles.cartItemVariant}
+                          key={variant.variant_id}
+                        >
                           <strong>{variant.variant_title}:</strong>
                           {variant.option_name}
                         </p>
                       ))}
                       <p className={styles.cartItemPrice}>
-                        <strong>Price:</strong>{" "}
+                        <strong>Price:</strong>
                         {formatVND(product.sale_price * 1000)}
                       </p>
                     </div>
@@ -105,7 +117,9 @@ const Cart = ({ handleVisible }: { handleVisible: () => void }) => {
                       <button
                         disabled={product.quantity <= 1}
                         className={styles.cartBtnClick}
-                        onClick={() => handleDecrease(product.id)}
+                        onClick={() =>
+                          handleDecrease(product.id, product.chooseVariants)
+                        }
                       >
                         &minus;
                       </button>
@@ -114,12 +128,16 @@ const Cart = ({ handleVisible }: { handleVisible: () => void }) => {
                       </span>
                       <button
                         className={styles.cartBtnClick}
-                        onClick={() => handleIncrease(product.id)}
+                        onClick={() =>
+                          handleIncrease(product.id, product.chooseVariants)
+                        }
                       >
                         &#43;
                       </button>
                       <button
-                        onClick={() => handleRemove(product.id)}
+                        onClick={() =>
+                          handleRemove(product.id, product?.chooseVariants)
+                        }
                         className={styles.cartBtnRemove}
                       >
                         <i className="fa-solid fa-trash-can"></i>
@@ -135,7 +153,7 @@ const Cart = ({ handleVisible }: { handleVisible: () => void }) => {
             </div>
             <div className={styles.cartFooter}>
               <p className={styles.cartFooterTotal}>
-                <strong>Cart Total : </strong>
+                <strong>Cart Total: </strong>
                 {formatVND(TotalCartPrice * 1000)}
               </p>
               <button onClick={handleClear} className={styles.cartFooterClear}>

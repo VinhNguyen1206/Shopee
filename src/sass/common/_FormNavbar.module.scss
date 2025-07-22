@@ -4,12 +4,12 @@
   height: 80px;
   display: flex;
   align-items: center;
-  padding: 0 200px;
+  justify-content: space-between;
   &Nav {
-    width: 1200px;
+    min-width: 60%;
+    margin: 0 auto;
     @include dflex;
     justify-content: space-between;
-    margin: 0 160px;
     &Left {
       @include dflex;
       justify-content: space-between;

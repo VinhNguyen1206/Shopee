@@ -27,10 +27,10 @@ function SellerLoginForm({
       </div>
       <LoginInput />
       <div className={styles.formOther}>
-        <Link className={styles.formMainOtherLink} to={link2}>
+        <Link className={styles.formOtherLink} to={link2}>
           Quên mật khẩu
         </Link>
-        <Link className={styles.formMainOtherLink} to={link3}>
+        <Link className={styles.formOtherLink} to={link3}>
           Đăng nhập với SMS
         </Link>
       </div>

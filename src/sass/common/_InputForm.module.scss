@@ -1,12 +1,14 @@
 @use "./index.module" as *;
-.formMainTop {
-  margin-bottom: 10px;
+.form {
+  // margin-bottom: 10px;
   &Input {
-    width: 340px;
+    min-width: 100%;
     height: 4rem;
     padding: 12px;
+    margin-bottom: 15px;
     &Error {
-      @extend .formMainTopInput;
+      @extend .formInput;
+      margin-bottom: 5px;
       border: 1px solid red;
       background-color: #fff6f7;
       &:focus {
@@ -14,8 +16,23 @@
       }
     }
   }
+  &Cover {
+    position: relative;
+    width: 100%;
+    &Password {
+      @extend .formInput;
+    }
+    &ClickOn,
+    &ClickOff {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      border: none;
+      background-color: #fff;
+    }
+  }
   &Btn {
-    @extend .formMainTopInput;
+    @extend .formInput;
     padding: 0;
     border: none;
     margin-bottom: 30px;

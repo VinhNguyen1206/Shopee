@@ -1,6 +1,10 @@
 @use "../common/index.module" as *;
 .form {
   @include formbg;
+  height: 460px;
+  @media (max-width: $breakpoint-tablet) {
+    min-width: 75%;
+  }
   &Header {
     height: 80px;
     &Title {
@@ -13,7 +17,6 @@
     padding: 0 30px 32px;
     &Mid {
       &Security {
-        margin-top: 20px;
         font-size: 1.2rem;
         text-align: center;
         &Link {
@@ -25,6 +28,7 @@
   }
   &Footer {
     text-align: center;
+    margin-top: 25px;
     font-size: 1.4rem;
     &Desc {
       padding-right: 3px;

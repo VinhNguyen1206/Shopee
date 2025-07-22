@@ -7,6 +7,14 @@
   left: 25%;
   height: 290px;
   z-index: 1;
+  border: 1px solid rgba($color: #000000, $alpha: 0.5);
+  @media (max-width: $breakpoint-desktop) {
+    left: 5%;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    left: 5%;
+    width: 400px;
+  }
 }
 .header {
   display: flex;
@@ -60,7 +68,6 @@
     display: flex;
     justify-content: space-between;
     width: 650px;
-
     padding: 24px;
     &Cover {
       display: flex;
@@ -103,6 +110,26 @@
       border: none;
       height: 30px;
       width: 120px;
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    &Main {
+      width: 400px;
+      &Cover {
+        padding-right: 20px;
+      }
+      &Title {
+        font-size: 1.3rem;
+        &Span {
+          right: 15px;
+        }
+      }
+      &Form {
+        width: 220px;
+      }
+    }
+    &Footer {
+      width: 400px;
     }
   }
 }

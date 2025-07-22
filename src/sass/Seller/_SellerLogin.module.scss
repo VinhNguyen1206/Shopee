@@ -5,4 +5,7 @@
   height: 75vh;
   margin: 5px 140px;
   z-index: -1;
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+  }
 }

@@ -3,6 +3,9 @@
   background-color: rgb(238, 77, 45);
   height: 700px;
   padding: 0 150px;
+  @media (max-width: $breakpoint-tablet) {
+    @include dflex;
+  }
   &Img {
     height: 700px;
     background-image: url("/public/img/SignUp/SignUpbg.png");
@@ -17,5 +20,33 @@
     justify-content: space-between;
     align-items: center;
     height: 450px;
+  }
+  @media (max-width: $breakpoint-desktop) {
+    padding: 0 80px;
+    @include dflex;
+    &Img {
+      margin: 0 120px;
+      height: 500px;
+      background-size: cover;
+    }
+    &Content {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 30px;
+    &Img {
+      margin: 0 30px;
+      height: 300px;
+      background-size: contain;
+      align-items: center;
+    }
+    &Content {
+      flex-direction: column;
+      height: auto;
+      gap: 15px;
+    }
   }
 }

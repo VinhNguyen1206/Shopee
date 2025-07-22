@@ -1,7 +1,7 @@
 @use "../common/index.module" as *;
 .form {
   @include formbg;
-  height: 410px;
+  height: 450px;
   &Main {
     padding: 0 30px 15px;
   }

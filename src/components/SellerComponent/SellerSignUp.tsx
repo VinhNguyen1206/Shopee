@@ -4,7 +4,7 @@ import styles from "../../sass/Seller/_SellerSignUp.module.scss";
 import SignUpForm from "../SignupComponents/Form/SignUpForm";
 function SellerSignUp() {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <FormNavbar title="Đăng ký" />
       <div className={styles.container}>
         <div className={styles.seller}>
@@ -32,7 +32,7 @@ function SellerSignUp() {
               </div>
             </div>
           </div>
-          <SignUpForm link="/sellerlogin" />
+          <SignUpForm link="/sellerlogin" path="/sellerlogin" />
         </div>
         <ChatBox />
       </div>

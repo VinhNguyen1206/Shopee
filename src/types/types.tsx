@@ -60,3 +60,8 @@ export type ChooseVariants = {
   option_id: number;
   option_name: string;
 };
+
+export type InputProps = {
+  placeholder?: string;
+  path?: string;
+};

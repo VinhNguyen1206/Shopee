@@ -35,6 +35,9 @@
     text-decoration: none;
     color: $primary-color;
     padding-right: 10px;
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 1.3rem;
+    }
   }
 }
 @mixin title {
@@ -66,18 +69,20 @@
     color: $bg-color;
     @include dflex;
   }
+  @media (max-width: $breakpoint-tablet) {
+    &Content {
+      font-size: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 @mixin afterHover {
   position: absolute;
   border: 10px solid;
   border-color: transparent transparent $bg-color transparent;
 }
-@mixin scrollbar {
-  overflow-y: hidden;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+
 @mixin formbg {
   height: 430px;
   width: 400px;
@@ -98,4 +103,14 @@
   margin-right: 10px;
   width: 100px;
   color: $product-color;
+}
+
+@mixin scrollContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
