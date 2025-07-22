@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+1. Homepage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Navbar:
 
-Currently, two official plugins are available:
+* click đăng ký để đăng ký tài khoản, sau khi đăng ký tài khoản sẽ link đến trang đăng nhập để đăng nhập
+* click "trở thành người bán shopee" để tạo tài khoản bán hàng, sau đó link đến trang đăng nhập để đăng nhập
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Danh mục, Shopee Mall :
 
-## Expanding the ESLint configuration
+* Bấm mũi tên góc phải để scroll trang tới cuối và ngược lại, có thể scroll bằng touchpad
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- flash sale, tìm kiếm sản phẩm:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Bấm mũi tên góc phải để scroll trang tới cuối và ngược lại, có thể scroll bằng touchpad
+* Bấm vào sản phẩm để xem chi tiết sản phẩm
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Gợi ý hôm nay: list sản phẩm của trang, click để xem chi tiết sản phẩm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Trang chi tiết sản phẩm:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- hover vào hình ảnh bên dưới để thay thế hình ảnh phía trên
+- click vào "tố cáo" để tố cáo nội dung bạn cần
+- chọn variant muốn mua để thêm vào giỏ hàng : Màu sắc, kích cỡ, ...
+- - để tăng số lượng, - để giảm số lượng
+- bấm Thêm vào giỏ hàng hoặc mua ngay để thêm vào giỏ hàng
+- click vào icon giỏ hàng để xem sản phẩm đã thêm: bao gồm name,price,variant,quantity.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Trang giỏ hàng
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- click vào x để tắt giỏ hàng
+- - - để tăng giảm số lượng sau khi thêm
+- icon thùng rác để xóa sản phẩm chỉ định
+- clear để xóa toàn bộ giỏ hàng
+- mua hàng để thanh toán sản phẩm

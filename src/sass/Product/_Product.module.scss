@@ -1,7 +1,7 @@
 @use "../common/index.module" as *;
 .container {
   background-color: rgba($color: #fef9f7, $alpha: 0.8);
-  padding-top: 180px;
+  padding: 180px 0 120px;
 }
 .warningColor {
   background-color: rgba(255, 87, 34, 0.1);
@@ -380,7 +380,6 @@
   }
   @media (max-width: $breakpoint-desktop) {
     max-width: 85vw;
-    padding-bottom: 120px;
     &Left {
       padding: 10px;
       &Top {
