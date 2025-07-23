@@ -423,7 +423,10 @@ const Product = () => {
                 onClick={handleClick}
                 className={styles.productRightButtonAdd}
               >
-                <i className="fa-solid fa-cart-shopping"></i>
+                <i
+                  style={{ display: "flex", alignItems: "center" }}
+                  className="fa-solid fa-cart-shopping"
+                ></i>
                 <p className={styles.productRightButtonAddContent}>
                   Thêm Vào Giỏ Hàng
                 </p>
