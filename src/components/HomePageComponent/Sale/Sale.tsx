@@ -1,11 +1,12 @@
 import Clock from "../Clock/Clock";
-import styles from "../../../sass/HomePage/_Sale.module.scss";
 import SeeAll from "../SeeAll/SeeAll";
 import Button from "../Button/Button";
 import productDatas from "../../../../public/products.json";
 import { Link } from "react-router-dom";
 import { mySlug } from "../../../utils/Slug";
 import { useRef } from "react";
+
+import styles from "@/sass/HomePage/_Sale.module.scss";
 
 function Sale() {
   const allProduct = productDatas.products;
