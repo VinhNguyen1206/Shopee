@@ -1,54 +1,69 @@
 @use "../common/index.module" as *;
+
 .mall {
   @include bg;
   margin-top: 35px;
   position: relative;
   padding-right: 15px;
+
   &Top {
     @include title;
+
     &Title {
       @include dflex;
+
       &Name {
         text-decoration: none;
         color: $mall-color;
         width: 110px;
       }
+
       &Event {
         display: flex;
+
         &Item {
           @include dflex;
           margin-right: 15px;
         }
+
         &Img {
           height: 20px;
           padding-right: 5px;
         }
+
         &Desc {
           font-weight: 350;
+
           @media (max-width: $breakpoint-tablet) {
             font-size: 1.1rem;
           }
         }
       }
     }
+
     &Btn {
       @include mallBtn;
     }
   }
+
   &Bot {
     display: flex;
+
     &Img {
       padding: 10px 0 0 15px;
     }
+
     &List {
       margin-bottom: -10px;
       position: relative;
       overflow-x: auto;
+
       &Top,
       &Bottom {
         display: flex;
         align-items: center;
       }
+
       &Item {
         height: 236px;
         width: 200px;
@@ -56,13 +71,16 @@
         margin-right: 10px;
         @include dflex;
         position: relative;
+
         &Link {
           text-decoration: none;
         }
+
         &Img {
           height: 216px;
           width: 180px;
         }
+
         &Desc {
           text-align: center;
           color: $mall-color;
@@ -72,55 +90,67 @@
           bottom: 20px;
         }
       }
+
       &Btn {
         @include mallBtn;
-        margin-left: 50px;
-        flex-shrink: 0;
-        font-size: 1.6rem;
+        & {
+          margin-left: 50px;
+          flex-shrink: 0;
+          font-size: 1.6rem;
+        }
       }
     }
   }
+
   @media (max-width: $breakpoint-desktop) {
     &Top {
       &Title {
         &Name {
           font-size: 1.4rem;
         }
+
         &Event {
           &Desc {
             font-size: 1.2rem;
           }
         }
       }
+
       &Btn {
         @include dflex;
       }
     }
+
     &Bot {
       &Img {
         display: none;
       }
     }
   }
+
   @media (max-width: $breakpoint-tablet) {
     &Top {
       &Title {
         &Name {
           font-size: 1.2rem;
         }
+
         &Event {
           &Item {
             margin-right: 5px;
           }
+
           &Desc {
             font-size: 1rem;
           }
         }
       }
+
       &Btn {
         @include dflex;
       }
     }
+
     &Bot {
       &Img {
         display: none;
@@ -128,6 +158,7 @@
     }
   }
 }
+
 .scrollContainer {
   @include scrollContainer;
 }

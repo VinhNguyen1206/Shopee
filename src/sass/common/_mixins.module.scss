@@ -1,9 +1,5 @@
 @use "./Variables.module" as *;
-@mixin dlfex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 @mixin hover {
   cursor: pointer;
   opacity: 0.8;

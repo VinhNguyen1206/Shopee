@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+
 const ReactCompilerConfig = {};
-// https://vite.dev/config/
+
 export default defineConfig({
   plugins: [
     react({
@@ -10,4 +11,10 @@ export default defineConfig({
       },
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {},
+    },
+  },
+  base: "./", // Adjust if deploying to a subfolder or using relative paths
 });

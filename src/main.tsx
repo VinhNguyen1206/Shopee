@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Global } from "./common/Global.tsx";
-import "./sass/common/_main.module.scss";
+import "./sass/common/main.scss";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.tsx";
 
