@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "test -f src/sass/HomePage/_Mall.module.scss || echo 'Missing Mall SCSS!'",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
