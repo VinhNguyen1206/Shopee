@@ -1,4 +1,4 @@
-import styles from "../../sass/Login/_Form.module.scss";
+import styles from "@/sass/Login/_Form.module.scss";
 import { Link } from "react-router-dom";
 import SellerLoginFooter from "./SellerLoginFooter";
 import More from "../../common/More";

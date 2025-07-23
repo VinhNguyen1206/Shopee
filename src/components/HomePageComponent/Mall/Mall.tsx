@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../../sass/HomePage/_Mall.module.scss";
+import styles from "@/sass/HomePage/_Mall.module.scss";
 import Button from "../Button/Button";
 import { events, list1, list2 } from "./MallConstants";
 import { useRef } from "react";

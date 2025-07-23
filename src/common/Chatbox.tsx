@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../sass/common/_ChatBox.module.scss";
+import styles from "@/sass/common/_ChatBox.module.scss";
 import { useState } from "react";
 function ChatBox() {
   const [visible, setVisible] = useState<boolean>(false);

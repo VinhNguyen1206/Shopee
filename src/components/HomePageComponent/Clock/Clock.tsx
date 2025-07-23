@@ -1,4 +1,4 @@
-import styles from "../../../sass/HomePage/_Clock.module.scss";
+import styles from "@/sass/HomePage/_Clock.module.scss";
 import { useEffect, useState } from "react";
 
 function formatDate(date: Date) {

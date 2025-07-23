@@ -1,6 +1,6 @@
 import ChatBox from "../../../common/Chatbox";
 import FormNavbar from "../../../common/FormNavbar";
-import styles from "../../../sass/SignUp/_SignUp.module.scss";
+import styles from "@/sass/SignUp/_SignUp.module.scss";
 
 import LoginFormQr from "./FormQr/LoginFormQr";
 function LoginQr() {

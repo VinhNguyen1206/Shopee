@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../sass/help/_HelpQuestion.module.scss";
+import styles from "@/sass/help/_HelpQuestion.module.scss";
 function HelpQuestion() {
   return (
     <div className={styles.question}>

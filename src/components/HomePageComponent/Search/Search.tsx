@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../../sass/HomePage/_Search.module.scss";
+import styles from "@/sass/HomePage/_Search.module.scss";
 import Button from "../Button/Button";
 import SeeAll from "../SeeAll/SeeAll";
 import { mySlug } from "../../../utils/Slug";

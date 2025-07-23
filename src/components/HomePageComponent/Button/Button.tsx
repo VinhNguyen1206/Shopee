@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../../sass/HomePage/_Button.module.scss";
+import styles from "@/sass/HomePage/_Button.module.scss";
 type ButtonProps = {
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
 };

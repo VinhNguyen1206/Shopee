@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../sass/Product/_ReportForm.module.scss";
+import styles from "@/sass/Product/_ReportForm.module.scss";
 const ReportForm = ({ handleVisible }: { handleVisible: () => void }) => {
   const reasons = [
     "Sản phẩm có dấu hiệu lừa đảo",

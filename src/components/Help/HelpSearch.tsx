@@ -1,4 +1,4 @@
-import styles from "../../sass/help/_HelpSearch.module.scss";
+import styles from "@/sass/help/_HelpSearch.module.scss";
 function HelpSearch() {
   return (
     <div className={styles.container}>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../sass/help/_HelpNavBar.module.scss";
+import styles from "@/sass/help/_HelpNavBar.module.scss";
 function HelpNavBar() {
   return (
     <div className={styles.navbar}>

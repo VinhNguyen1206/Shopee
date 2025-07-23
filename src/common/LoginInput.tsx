@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../sass/common/_LoginInput.module.scss";
+import styles from "@/sass/common/_LoginInput.module.scss";
 import { loadFromLocalStorage } from "../utils/ReduxStorage";
 import { useNavigate } from "react-router-dom";
 

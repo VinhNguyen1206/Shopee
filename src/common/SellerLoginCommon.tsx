@@ -1,4 +1,4 @@
-import styles from "../sass/common/_SellerLoginCommon.module.scss";
+import styles from "@/sass/common/_SellerLoginCommon.module.scss";
 function SellerLoginCommon() {
   return (
     <div className={styles.sellerlogin}>

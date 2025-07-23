@@ -1,4 +1,4 @@
-import styles from "../../../sass/HomePage/_NavBar.module.scss";
+import styles from "@/sass/HomePage/_NavBar.module.scss";
 import { Link } from "react-router-dom";
 import { navs, nav2s, suggests } from "./NavBarConstants";
 import Cart from "../../../pages/Cart";

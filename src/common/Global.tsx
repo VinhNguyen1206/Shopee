@@ -1,4 +1,4 @@
-import "../sass/common/_global.module.scss";
+import "@/sass/common/_global.module.scss";
 type ChildrenProps = {
   children: React.ReactNode;
 };

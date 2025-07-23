@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../sass/Login/_FormOtp.module.scss";
+import styles from "@/sass/Login/_FormOtp.module.scss";
 import SellerHeaderQr from "./SellerHeaderQr";
 import InputForm from "../../common/InputForm";
 import More from "../../common/More";

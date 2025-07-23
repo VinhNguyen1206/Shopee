@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../../sass/HomePage/_Cate.module.scss";
+import styles from "@/sass/HomePage/_Cate.module.scss";
 import Button from "../Button/Button";
 import { Item1s, Item2s } from "./CateConstants";
 import { useRef } from "react";

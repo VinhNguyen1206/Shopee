@@ -1,6 +1,6 @@
 import ChatBox from "../../common/Chatbox";
 import FormNavbar from "../../common/FormNavbar";
-import styles from "../../sass/Seller/_SellerSignUp.module.scss";
+import styles from "@/sass/Seller/_SellerSignUp.module.scss";
 import SignUpForm from "../SignupComponents/Form/SignUpForm";
 function SellerSignUp() {
   return (

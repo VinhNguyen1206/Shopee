@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../sass/common/_InputForm.module.scss";
+import styles from "@/sass/common/_InputForm.module.scss";
 import { saveToLocalStorage } from "../utils/ReduxStorage";
 import { useNavigate } from "react-router-dom";
 import type { InputProps } from "../types/types";

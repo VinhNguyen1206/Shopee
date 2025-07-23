@@ -1,4 +1,4 @@
-import styles from "../../sass/Product/_SecurityForm.module.scss";
+import styles from "@/sass/Product/_SecurityForm.module.scss";
 
 const SecurityForm = () => {
   return (

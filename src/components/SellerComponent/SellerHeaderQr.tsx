@@ -1,4 +1,4 @@
-import styles from "../../sass/Login/_HeaderQr.module.scss";
+import styles from "@/sass/Login/_HeaderQr.module.scss";
 import { Link } from "react-router-dom";
 import type { LoginQrProps } from "../../types/types";
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../../sass/HomePage/_Banner.module.scss";
+import styles from "@/sass/HomePage/_Banner.module.scss";
 import { choices } from "./BannerConstants";
 
 function Banner() {

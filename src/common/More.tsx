@@ -1,4 +1,4 @@
-import styles from "../sass/common/_More.module.scss";
+import styles from "@/sass/common/_More.module.scss";
 function More() {
   return (
     <div className={styles.more}>

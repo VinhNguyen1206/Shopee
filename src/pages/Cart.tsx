@@ -1,4 +1,4 @@
-import styles from "../sass/Cart/_Cart.module.scss";
+import styles from "@/sass/Cart/_Cart.module.scss";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import type { RootState } from "../redux/store";
 import {

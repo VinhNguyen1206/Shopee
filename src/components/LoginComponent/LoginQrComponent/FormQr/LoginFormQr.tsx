@@ -1,4 +1,4 @@
-import styles from "../../../../sass/Login/_FormQr.module.scss";
+import styles from "@/sass/Login/_FormQr.module.scss";
 import { useState } from "react";
 import HeaderQr from "../../HeaderQr";
 import LoginFooter from "../../../../common/LoginFooter";

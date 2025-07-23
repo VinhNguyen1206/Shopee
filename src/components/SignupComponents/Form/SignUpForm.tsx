@@ -1,5 +1,5 @@
 import { Link, type To } from "react-router-dom";
-import styles from "../../../sass/SignUp/_SignUpForm.module.scss";
+import styles from "@/sass/SignUp/_SignUpForm.module.scss";
 import InputForm from "../../../common/InputForm";
 import More from "../../../common/More";
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../sass/help/_HelpCate.module.scss";
+import styles from "@/sass/help/_HelpCate.module.scss";
 import { list } from "./HelpCateConstant";
 function HelpCate() {
   return (

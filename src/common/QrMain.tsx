@@ -1,4 +1,4 @@
-import styles from "../sass/common/_QrMain.module.scss";
+import styles from "@/sass/common/_QrMain.module.scss";
 
 const QrMain = ({ handleClick }: { handleClick: () => void }) => {
   return (

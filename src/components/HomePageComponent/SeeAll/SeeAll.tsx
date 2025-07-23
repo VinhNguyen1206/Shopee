@@ -1,4 +1,4 @@
-import styles from "../../../sass/HomePage/_SeeAll.module.scss";
+import styles from "@/sass/HomePage/_SeeAll.module.scss";
 function SeeAll() {
   return (
     <div className={styles.seeall}>

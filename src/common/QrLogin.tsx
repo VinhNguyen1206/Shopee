@@ -1,4 +1,4 @@
-import styles from "../sass/common/_QrLogin.module.scss";
+import styles from "@/sass/common/_QrLogin.module.scss";
 const QrLogin = ({ handleClick }: { handleClick: () => void }) => {
   return (
     <div className={styles.scanform}>

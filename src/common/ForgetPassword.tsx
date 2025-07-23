@@ -1,4 +1,4 @@
-import styles from "../sass/common/_ForgetPassword.module.scss";
+import styles from "@/sass/common/_ForgetPassword.module.scss";
 import { Link } from "react-router-dom";
 import FormNavbar from "./FormNavbar";
 import InputForm from "./InputForm";

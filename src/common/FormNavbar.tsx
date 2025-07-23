@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../sass/common/_FormNavbar.module.scss";
+import styles from "@/sass/common/_FormNavbar.module.scss";
 type NavBarProps = {
   title?: string;
 };

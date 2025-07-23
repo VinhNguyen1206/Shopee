@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NavBar from "../../components/HomePageComponent/NavBar/NavBar";
-import styles from "../../sass/Product/_Product.module.scss";
+import styles from "@/sass/Product/_Product.module.scss";
 import { icons } from "./ProductConstants";
 import type { CartProduct, ChooseVariants, Products } from "../../types/types";
 import "../../../public/products.json";
