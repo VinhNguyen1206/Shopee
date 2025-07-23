@@ -1,4 +1,4 @@
-import styles from "@/sass/Homepage/_Suggest.module.scss";
+import styles from "@/sass/HomePage/_Suggest.module.scss";
 const Suggest = () => {
   return (
     <div className={styles.suggest}>
