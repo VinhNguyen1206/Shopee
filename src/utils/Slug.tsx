@@ -1,6 +1,3 @@
-import slug from "slug";
-
-// utils/slugify.ts
 export function mySlug(str: string): string {
   return str
     .normalize("NFD") // decompose accents
@@ -11,4 +8,3 @@ export function mySlug(str: string): string {
     .replace(/\s+/g, "-") // replace spaces with -
     .replace(/-+/g, "-"); // remove duplicate -
 }
-// console.log(mySlug);

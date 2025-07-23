@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../sass/Product/_SecurityForm.module.scss";
 
 const SecurityForm = () => {
