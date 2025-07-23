@@ -24,5 +24,5 @@ export default defineConfig({
       // Add more aliases as needed
     },
   },
-  base: "./", // Adjust if deploying to a subfolder or using relative paths
+  base: "/", // Adjust if deploying to a subfolder or using relative paths
 });
