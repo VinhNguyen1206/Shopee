@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../../../sass/Homepage/_List.module.scss";
 // import { Listitem } from "./ListConstants";
-import productsData from "../../../products.json";
+import productsData from "../../../../public/products.json";
 import { mySlug } from "../../../utils/Slug";
 
 const List = () => {

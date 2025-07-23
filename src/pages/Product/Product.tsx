@@ -3,7 +3,7 @@ import NavBar from "../../components/HomePageComponent/NavBar/NavBar";
 import styles from "../../sass/Product/_Product.module.scss";
 import { icons } from "./ProductConstants";
 import type { CartProduct, ChooseVariants, Products } from "../../types/types";
-import "../../products.json";
+import "../../../public/products.json";
 import ReportForm from "../../components/Product/ReportForm";
 import SecurityForm from "../../components/Product/SecurityForm";
 import { useParams } from "react-router-dom";
@@ -31,7 +31,7 @@ const Product = () => {
 
   // fetching jsonfile
   useEffect(() => {
-    fetch("/src/products.json")
+    fetch("/products.json")
       .then((res) => res.json())
       .then((data: { products: Products[] }) => {
         console.log(slug);
