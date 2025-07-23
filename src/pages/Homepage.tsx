@@ -7,7 +7,7 @@ import NavBar from "../components/HomePageComponent/NavBar/NavBar";
 import Sale from "../components/HomePageComponent/Sale/Sale";
 import Search from "../components/HomePageComponent/Search/Search";
 import Suggest from "../components/HomePageComponent/Suggest/Suggest";
-import styles from "@/sass/Homepage/_HomePage.module.scss";
+import styles from "@/sass/HomePage/_HomePage.module.scss";
 
 function Homepage() {
   return (
